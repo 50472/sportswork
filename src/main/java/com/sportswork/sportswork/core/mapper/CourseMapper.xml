@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.CourseMapper">
+    <!--添加课程-->
+    <insert id="addCourse" useGeneratedKeys="true" keyProperty="id" parameterType="Course">
+        INSERT INTO course (id, name, classhour)
+        VALUES (#{id}, #{name}, #{classHour})
+    </insert>
+
+    <!--删除课程-->
+    <delete id="deleteCourse" parameterType="String">
+        DELETE FROM course
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置课程所有信息-->
+    <update id="setCourse" parameterType="Course">
+        UPDATE course
+        SET name = #{name}
+        SET classhour = #{classHour}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有课程-->
+    <resultMap id="selectCourses" type="Course"/>
+    <select id="getAllCourses" resultMap="selectCourses">
+        SELECT
+            id,
+            name,
+            classhour
+        FROM course
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取课程信息-->
+    <select id="getCourse" resultType="Course">
+        SELECT
+            id,
+            name,
+            classhour
+        FROM course
+        WHERE id = #{id}
+    </select>
+
+</mapper>
