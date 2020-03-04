@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <title>体育馆开放管理系统</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="hg-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="/hg-layui-admin-ui/css/style.css"  media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/css/font.css">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/admin/admin.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollbar.css">
+
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollBar.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/admin.js"></script>
+
+    <!-- 请求进度条插件 -->
+    <script src='/hg-layui-admin-ui/lib/nprogress/nprogress.js'></script>
+    <link rel='stylesheet' href='/hg-layui-admin-ui/lib/nprogress/nprogress.css' />
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+
+    <!-- 顶部 -->
+    <div class="layui-header">
+        <div class="logo">
+            <a href="javascript:;"><img src="/hg-layui-admin-ui/images/logo.png" class="layui-nav-img"><span class="xs-hide">体育馆开放管理系统</span></a>
+        </div>
+        <ul class="layui-nav left" lay-filter="nav-top">
+            <li meun_id="0" class="layui-nav-item layui-this"><a href="javascript:;">UI组件</a></li>
+            <li meun_id="1" class="layui-nav-item"><a href="javascript:;">Demo</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">新页面</a>
+                <dl class="layui-nav-child">
+                    <!-- 二级菜单 -->
+                    <dd lay-unselect>
+                        <a onclick="hg.open('最大化','http://www.baidu.com','','',true)">
+                            <i class="iconfont">&#xe62a;</i>弹出最大化</a></dd>
+                    <dd lay-unselect>
+                        <a onclick="hg.open('弹出自动宽高','http://www.baidu.com')">
+                            <i class="iconfont">&#xe62a;</i>弹出自动宽高</a></dd>
+                    <dd lay-unselect>
+                        <a onclick="hg.open('弹出指定宽高','http://www.baidu.com',500,300)">
+                            <i class="iconfont">&#xe62a;</i>弹出指定宽高</a></dd>
+                    <dd lay-unselect>
+                        <a onclick="hg.add_tab('在tab打开','member-list.html')">
+                            <i class="iconfont">&#xe6ac;</i>在tab打开</a></dd>
+                    <dd lay-unselect>
+                        <a onclick="hg.add_tab('在tab打开刷新','member-del.html',true)">
+                            <i class="iconfont">&#xe6ac;</i>在tab打开刷新</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav right xs-hide">
+            <li class="layui-nav-item" lay-unselect><a href="javascript:;" hg-event="fullscreen"><i
+                    class="layui-icon layui-icon-screen-full"></i></a></li>
+            <li class="layui-nav-item" lay-unselect><a href="javascript:;" onclick="cleancache()"><i
+                    class="layui-icon layui-icon-delete"></i></a></li>
+            <li class="layui-nav-text">超级管理员</li>
+            <li class="layui-nav-item">
+                <a href="javascript:;"><img src="/hg-layui-admin-ui/images/touxiang.jpg" class="layui-nav-img">一如既往</a>
+                <dl class="layui-nav-child">
+                    <dd lay-unselect><a onclick="hg.add_tab('个人信息','page/userInfo.html')"><i
+                            class="iconfont">&#xe601;</i>个人信息</a></dd>
+                    <dd lay-unselect><a onclick="hg.add_tab('修改密码','page/changePwd.html')"><i
+                            class="iconfont">&#xe621;</i>修改密码</a></dd>
+                    <dd lay-unselect>
+                        <a th:href="@{/logout}" th:if="${#httpServletRequest.remoteUser}">
+                            <i class="iconfont">&#xe615;</i>退出</a>
+                        <a th:href="@{/login}" th:unless="${#httpServletRequest.remoteUser}">
+                            <i class="iconfont">&#xe615;</i>登录</a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 左侧菜单 -->
+    <div class="layui-left-nav xs-left-nav scrollBox">
+        <div id="side-nav">
+            <ul id="nav" class="layui-tab-item layui-show">
+            </ul>
+        </div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="layui-page-content">
+        <div class="layui-tab tab" lay-unauto lay-allowClose="true" lay-filter="xbs_tab">
+            <span class="indent-tab left" title="侧边伸缩"><i class="layui-icon layui-icon-shrink-right"></i></span>
+
+            <div class="indent-tab left layui-icon layui-icon-prev"></div>
+
+            <ul class="layui-nav">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><i class="layui-icon caozuo">&#xe643;</i>页面操作</a>
+                    <dl class="layui-nav-child">
+                        <dd lay-unselect data-page-close="this">
+                            <a href="javascript:;"><i class="iconfont">&#xe62e;</i>刷新当前</a>
+                        </dd>
+                        <dd lay-unselect data-page-close="other">
+                            <a href="javascript:;"><i class="iconfont">&#xe6a7;</i>关闭其他</a>
+                        </dd>
+                        <dd lay-unselect data-page-close="all">
+                            <a href="javascript:;"><i class="iconfont">&#xe6a7;</i>关闭全部</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+
+            <div class="indent-tab right layui-icon layui-icon-next"></div>
+
+            <ul class="layui-tab-title">
+                <li class="home layui-this"><i class="layui-icon">&#xe68e;</i></li>
+            </ul>
+
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <iframe src='home' frameborder="0" scrolling="yes" class="hg-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    layui.use('element', function(){
+        var element = layui.element;
+        console.log('触发了layui.element');
+        var $ = layui.jquery;
+        var data = getData();
+        if(data !== undefined && data.length > 0){
+            // data = JSON.parse(data);
+            var liStr= "";
+            // 遍历生成主菜单
+            for( var i = 0; i <data.length; i++){
+                // 判断是否存在子菜单
+                liStr+=getChildMenu(data[i]);
+            };
+            console.log(">>>>触发左侧菜单栏>>>>");
+            $("#nav").html(liStr);
+            element.init();//初始化element事件，使菜单展开
+        }
+    });
+
+    function getData() {
+        var data;
+        jQuery.ajax({
+            type : 'get',
+            url : '/menu',
+            async : false,
+            data : {},
+            success: function(result){
+                data = result;
+            },
+            error: function () {
+                alert("获取单位信息失败:");
+            }
+        });
+        return data;
+    }
+
+    // 递归生成子菜单
+    function getChildMenu(subMenu) {
+        var subStr = "";
+        if(subMenu.children!=null&&subMenu.children.length>0){
+            subStr+="<li>" +
+                        "<a><i class='iconfont'>&#xe64b;</i><cite>"+subMenu.name+"</cite><i " +
+                            "class=\"iconfont nav_right\">&#xe609;</i></a>" +
+                        "<ul class=\"sub-menu\">\n";
+                        for( var j = 0; j <subMenu.children.length; j++){
+                            subStr+=getChildMenu(subMenu.children[j]);
+                        }
+                        subStr+=
+                        "</ul>" +
+                "</li>";
+        }else{
+            subStr+="<li class=\"sub-tab\" hg-title=\""+subMenu.name+"\" hg-nav=\""+subMenu.url+"\">" +
+                        "<a class=\"\" hg-nav=\""+subMenu.url+"\"><i class=\"iconfont\">&#xe649;</i><cite>"+subMenu.name+"</cite></a>" +
+                    "</li>";
+        }
+        return subStr;
+    }
+
+    function cleancache(){
+        var a = hg.load(function(){
+            var that = this;
+            setTimeout(function(){
+                //that.close(); //关闭加载层
+                a.close();
+                hg.msghide('清除服务器缓存成功.');
+            },2000);
+        })
+    }
+</script>
+
+
+</body>
+</html>

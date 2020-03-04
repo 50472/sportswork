@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.GameEnrollMapper">
+    <!--添加竞赛报名-->
+    <insert id="addGameEnroll" useGeneratedKeys="true" keyProperty="id" parameterType="GameEnroll">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO game_enroll (id, student_id, game_id, score)
+        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{gameId,jdbcType=VARCHAR}
+        , #{score,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除竞赛报名-->
+    <delete id="deleteGameEnroll" parameterType="String">
+        DELETE FROM game_enroll
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置竞赛报名所有信息-->
+    <update id="setGameEnroll" parameterType="GameEnroll">
+        UPDATE game_enroll
+        SET student_id = #{studentId},
+            game_id = #{gameId},
+            score = #{score}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有竞赛报名-->
+    <resultMap id="selectGameEnrolls" type="GameEnroll"/>
+    <select id="getAllGameEnrolls" resultMap="selectGameEnrolls">
+        SELECT
+            id,
+            student_id,
+            game_id,
+            score
+        FROM game_enroll
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取竞赛报名信息-->
+    <select id="getGameEnroll" resultType="GameEnroll">
+        SELECT
+            id,
+            student_id,
+            game_id,
+            score
+        FROM game_enroll
+        WHERE id = #{id}
+    </select>
+
+    <!--获取竞赛报名数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM game_enroll
+    </select>
+</mapper>

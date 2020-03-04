@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.RoleMapper">
+    <!--添加角色-->
+    <insert id="addRole" useGeneratedKeys="true" keyProperty="id" parameterType="Role">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO role (id, name, description)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除角色-->
+    <delete id="deleteRole" parameterType="String">
+        DELETE FROM role
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置角色所有信息-->
+    <update id="setRole" parameterType="Role">
+        UPDATE role
+        SET name = #{name},
+            description = #{description}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有角色-->
+    <resultMap id="selectRoles" type="Role"/>
+    <select id="getAllRoles" resultMap="selectRoles">
+        SELECT
+            id,
+            name,
+            description
+        FROM role
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--根据用户获取所有权限-->
+    <select id="getRolesByUser" resultMap="selectRoles">
+        SELECT
+            id,
+            name,
+            description
+        FROM user_role
+            LEFT OUTER JOIN role ON user_role.role_id = role.id
+        WHERE user_role.user_id = #{userId}
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取角色信息-->
+    <select id="getRole" resultType="Role">
+        SELECT
+            id,
+            name,
+            description
+        FROM role
+        WHERE id = #{id}
+    </select>
+
+    <!--通过name获取角色信息-->
+    <select id="getRoleByName" resultType="Role">
+        SELECT
+            id,
+            name,
+            description
+        FROM role
+        WHERE name = #{name}
+    </select>
+
+    <!--通过description获取角色信息-->
+    <select id="getRoleByDescription" resultType="Role">
+        SELECT
+            id,
+            name,
+            description
+        FROM role
+        WHERE description = #{description}
+    </select>
+
+    <!--获取角色数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM role
+    </select>
+</mapper>

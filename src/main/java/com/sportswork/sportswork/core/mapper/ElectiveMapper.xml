@@ -1,5 +1,197 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sportswork.sportswork.core.mapper.ElectiveMapper">
+    <!--添加选课记录-->
+    <insert id="addElective" useGeneratedKeys="true" keyProperty="id" parameterType="Elective">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO elective (id, student_id, teaching_id, score)
+        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR},
+        #{teachingId,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除选课记录-->
+    <delete id="deleteElective" parameterType="String">
+        DELETE FROM elective
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置选课记录信息-->
+    <update id="setElective" parameterType="Elective">
+        UPDATE elective
+        SET
+            score = #{score}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 多对一映射-->
+    <resultMap id="electiveResult" type="Elective">
+        <id property="id" column="e_id"/>
+        <result property="score" column="score"/>
+        <association property="student" column="student_id" javaType="Student" resultMap="studentResult"/>
+        <association property="teaching" column="teaching_id" javaType="Teaching" resultMap="teachingResult"/>
+    </resultMap>
+
+    <resultMap id="studentResult" type="Student">
+        <id property="id" column="s_id"/>
+        <result property="name" column="s_name"/>
+        <result property="sex" column="s_sex"/>
+        <result property="number" column="s_number"/>
+        <result property="profession" column="s_profession"/>
+    </resultMap>
+
+    <resultMap id="teachingResult" type="Teaching">
+        <id property="id" column="ting_id"/>
+        <result property="semester" column="semester"/>
+        <result property="state" column="state"/>
+        <result property="teacherId" column="teacher_id"/>
+        <result property="courseId" column="course_id"/>
+        <association property="teacher" column="teacher_id" javaType="Teacher" resultMap="teacherResult"/>
+        <association property="course" column="course_id" javaType="Course" resultMap="courseResult"/>
+    </resultMap>
+
+    <resultMap id="teacherResult" type="Teacher">
+        <id property="id" column="t_id"/>
+        <result property="name" column="t_name"/>
+        <result property="sex" column="t_sex"/>
+        <result property="number" column="t_number"/>
+    </resultMap>
+
+    <resultMap id="courseResult" type="Course">
+        <id property="id" column="c_id"/>
+        <result property="name" column="c_name"/>
+        <result property="classHour" column="classhour"/>
+        <result property="number" column="c_number"/>
+    </resultMap>
+
+    <!--获取所有选课记录-->
+    <resultMap id="selectElectives" type="Elective"/>
+    <select id="getAllElectives" resultMap="electiveResult">
+        SELECT
+            elective.id e_id,
+            student_id,
+            teaching_id,
+            score,
+
+            student.id s_id,
+            student.name s_name,
+            student.sex s_sex,
+            student.number s_number,
+            profession,
+
+            teaching.id ting_id,
+            teaching.semester,
+            teaching.state,
+            teacher_id,
+            course_id,
+
+            teacher.id t_id,
+            teacher.name t_name,
+            teacher.sex t_sex,
+            teacher.number t_number,
+
+            course.id c_id,
+            course.name c_name,
+            course.classhour,
+            course.number c_number
+        FROM elective
+            LEFT OUTER JOIN teaching ON elective.teaching_id = teaching.id
+            LEFT OUTER JOIN student ON elective.student_id = student.id
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        ORDER BY (course.name + 0) ASC
+    </select>
+
+    <!--获取所有选课记录-->
+    <select id="getElectivesByStudentOrTeacherOrCourse" resultMap="electiveResult">
+        SELECT
+            elective.id e_id,
+            student_id,
+            teaching_id,
+            score,
+
+            student.id s_id,
+            student.name s_name,
+            student.sex s_sex,
+            student.number s_number,
+            profession,
+
+            teaching.id ting_id,
+            teaching.semester,
+            teaching.state,
+            teacher_id,
+            course_id,
+
+            teacher.id t_id,
+            teacher.name t_name,
+            teacher.sex t_sex,
+            teacher.number t_number,
+
+            course.id c_id,
+            course.name c_name,
+            course.classhour,
+            course.number c_number
+        FROM elective
+            LEFT OUTER JOIN teaching ON elective.teaching_id = teaching.id
+            LEFT OUTER JOIN student ON elective.student_id = student.id
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE 1=1
+        <if test='teacherName!=""'>
+            AND teacher.name = #{teacherName}
+        </if>
+        <if test='courseName!=""'>
+            AND course.name = #{courseName}
+        </if>
+        <if test='studentName!=""'>
+            AND student.name = #{studentName}
+        </if>
+        ORDER BY
+        (course.name + 0),
+        (student.name + 0),
+        (teacher.name + 0)
+    </select>
+
+    <!--通过学生获取选课记录-->
+    <select id="getElectivesByStudent" resultMap="selectElectives">
+        SELECT
+            id,
+            student_id,
+            teaching_id,
+            score
+        FROM elective
+        WHERE student_id = #{studentId}
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--通过教师获取选课记录-->
+    <select id="getElectivesByTeaching" resultMap="selectElectives">
+        SELECT
+            id,
+            student_id,
+            teaching_id,
+            score
+        FROM elective
+        WHERE teaching_id = #{teachingId}
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取选课记录信息-->
+    <select id="getElective" resultType="Elective">
+        SELECT
+            id,
+            student_id,
+            teaching_id,
+            score
+        FROM elective
+        WHERE id = #{id}
+    </select>
+
+    <!--获取选课记录数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM elective
+    </select>
 
 </mapper>

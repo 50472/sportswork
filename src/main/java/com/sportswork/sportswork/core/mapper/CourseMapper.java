@@ -12,7 +12,9 @@ import java.util.List;
 public interface CourseMapper {
     void addCourse(Course course);
     Course getCourse(String id);
+    Course getCourseByNumber(String id);
     List<Course> getAllCourses();
     void deleteCourse(String id);
     void setCourse(Course course);
+    long getCount();
 }

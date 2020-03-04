@@ -18,5 +18,6 @@ public abstract class BaseEntity implements Serializable {
     /**
      * 全局唯一Id
      */
+
     protected String id;
 }

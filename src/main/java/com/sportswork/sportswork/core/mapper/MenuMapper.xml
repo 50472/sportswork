@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.MenuMapper">
+    <!--添加菜单栏-->
+    <insert id="addMenu" useGeneratedKeys="true" keyProperty="id" parameterType="com.sportswork.sportswork.core.help.Menu">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO menu (id, name, parent_id, level, url, menu.order, remarks)
+        VALUES (#{id}, #{name}, #{parentId}, #{level}, #{url}, #{order}, #{remarks})
+    </insert>
+
+    <!--删除菜单栏-->
+    <delete id="deleteMenu" parameterType="String">
+        DELETE FROM menu
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置菜单栏所有信息-->
+    <update id="setMenu" parameterType="com.sportswork.sportswork.core.help.Menu">
+        UPDATE menu
+        SET name = #{name},
+            parent_id = #{parentId},
+            level = #{level},
+            url = #{url},
+            menu.order = #{order},
+            remarks = #{remarks}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有菜单栏-->
+    <resultMap id="selectMenus" type="com.sportswork.sportswork.core.help.Menu"/>
+    <select id="getAllMenus" resultMap="selectMenus">
+        SELECT
+            id,
+            name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--通过角色获取菜单栏-->
+    <select id="getMenusByRole" resultMap="selectMenus">
+        SELECT
+            menu.id,
+            menu.name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+            LEFT OUTER JOIN role_menu ON menu.id = role_menu.menu_id
+            LEFT OUTER JOIN role ON role_menu.role_id = role.id
+        WHERE role.id = #{roleId}
+        ORDER BY
+            level,
+            menu.order
+    </select>
+
+    <!--通过名称获取菜单栏-->
+    <select id="getMenusByRoleName" resultMap="selectMenus">
+        SELECT
+            menu.id,
+            menu.name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+            LEFT OUTER JOIN role_menu ON menu.id = role_menu.menu_id
+            LEFT OUTER JOIN role ON role_menu.role_id = role.id
+        WHERE role.name = #{roleName}
+        ORDER BY
+            level,
+            menu.order
+    </select>
+
+    <!--孩子查询-->
+    <select id="selectChildren" resultMap="selectMenusAndChildren">
+        SELECT
+            menu.id,
+            menu.name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+        WHERE menu.parent_id = #{id}
+        ORDER BY
+            menu.order
+    </select>
+
+    <!-- 一对多自关联查询映射 -->
+    <resultMap id="selectMenusAndChildren" type="com.sportswork.sportswork.core.help.Menu">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="level" column="level"/>
+        <result property="url" column="url"/>
+        <result property="order" column="order"/>
+        <result property="remarks" column="remarks"/>
+
+        <collection property="children" ofType="Role" select="selectChildren" column="id">
+        </collection>
+    </resultMap>
+
+    <!--通过名称获取菜单栏-->
+    <select id="getFirstLevelMenusByRoleName" resultMap="selectMenusAndChildren">
+        SELECT
+            menu.id,
+            menu.name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+            LEFT OUTER JOIN role_menu ON menu.id = role_menu.menu_id
+            LEFT OUTER JOIN role ON role_menu.role_id = role.id
+        WHERE role.name = #{roleName} AND menu.level = 1
+        ORDER BY
+            menu.order
+    </select>
+
+    <!--获取菜单栏信息-->
+    <select id="getMenu" resultType="com.sportswork.sportswork.core.help.Menu">
+        SELECT
+            id,
+            name,
+            parent_id,
+            level,
+            url,
+            menu.order,
+            remarks
+        FROM menu
+        WHERE id = #{id}
+    </select>
+
+    <!--获取菜单栏数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM menu
+    </select>
+</mapper>

@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sportswork.sportswork.core.mapper.StudentMapper">
+    <!--添加学生-->
+    <insert id="addStudent" useGeneratedKeys="true" keyProperty="id" parameterType="Student">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO student (id, name, sex, number, profession)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+         #{sex,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR})
+    </insert>
 
+    <!--删除学生-->
+    <delete id="deleteStudent" parameterType="String">
+        DELETE FROM student
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置学生所有信息-->
+    <update id="setStudent" parameterType="Student">
+        UPDATE student
+        SET name = #{name},
+            sex = #{sex},
+            profession = #{profession}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有课程-->
+    <resultMap id="selectStudents" type="Student"/>
+    <select id="getAllStudents" resultMap="selectStudents">
+        SELECT
+            id,
+            name,
+            sex,
+            number,
+            profession
+        FROM student
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取学生信息-->
+    <select id="getStudent" resultType="Student">
+        SELECT
+            id,
+            name,
+            sex,
+            number,
+            profession
+        FROM student
+        WHERE id = #{id}
+    </select>
+
+    <!--获取学生数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM student
+    </select>
 </mapper>

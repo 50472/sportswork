@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据表格页面</title>
+    <link rel="stylesheet" href="/283/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="/283/js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/283/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/283/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/283/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/283/js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="/283/js/custom/general.js"></script>
+    <script type="text/javascript" src="/283/js/custom/tables.js"></script>
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="/283/css/style.ie9.css"/>
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="/283/css/style.ie8.css"/>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/283/js/plugins/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+
+<body class="withvernav">
+<div class="bodywrapper">
+
+    <div th:insert="~{pages/header :: topHeader}"></div>
+    <div th:insert="~{pages/header :: userHeader}"></div>
+    <div th:insert="~{pages/header :: userLeftmenuList}"></div>
+
+    <div class="centercontent">
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">个人中心</h1>
+        </div><!--pageheader-->
+
+        <div id="contentwrapper" class="contentwrapper">
+            <div class="stdform stdform2">
+                <p>
+                    <label>教师姓名</label>
+                    <span class="field" th:text="${teacher.name}"></span>
+                </p>
+
+                <p>
+                    <label>教师性别</label>
+                    <span class="field" th:text="${teacher.sex}"></span>
+                </p>
+
+            </div>
+        </div><!--contentwrapper-->
+
+
+    </div><!-- centercontent -->
+
+</div><!--bodywrapper-->
+
+</body>
+</html>

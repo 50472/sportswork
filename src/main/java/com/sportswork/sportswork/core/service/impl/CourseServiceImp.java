@@ -47,4 +47,9 @@ public class CourseServiceImp implements ICourseService {
     public Course getCourse(String courseId) {
         return courseMapper.getCourse(courseId);
     }
+
+    @Override
+    public Course getCourseByNumber(String number) {
+        return courseMapper.getCourseByNumber(number);
+    }
 }

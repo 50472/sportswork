@@ -15,4 +15,5 @@ public interface ICourseService {
     void setCourse(Course course);
     List<Course> getAllCourses();
     Course getCourse(String courseId);
+    Course getCourseByNumber(String number);
 }

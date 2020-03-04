@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.TestRecordMapper">
+    <!--添加体测记录-->
+    <insert id="addTestRecord" useGeneratedKeys="true" keyProperty="id" parameterType="TestRecord">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO test_record (id, student_id, sports_test_id, score, semester)
+        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{sportsTestId,jdbcType=VARCHAR}
+        , #{score,jdbcType=VARCHAR}, #{semester,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除体测记录-->
+    <delete id="deleteTestRecord" parameterType="String">
+        DELETE FROM test_record
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置体测记录所有信息-->
+    <update id="setTestRecord" parameterType="TestRecord">
+        UPDATE test_record
+        SET student_id = #{studentId},
+            sports_test_id = #{sportsTestId},
+            score = #{score},
+            semester = #{semester}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有体测记录-->
+    <resultMap id="selectTestRecords" type="TestRecord"/>
+    <select id="getAllTestRecords" resultMap="selectTestRecords">
+        SELECT
+            id,
+            student_id,
+            sports_test_id,
+            score,
+            semester
+        FROM test_record
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取体测记录信息-->
+    <select id="getTestRecord" resultType="TestRecord">
+        SELECT
+            id,
+            student_id,
+            sports_test_id,
+            score,
+            semester
+        FROM test_record
+        WHERE id = #{id}
+    </select>
+
+    <!--获取体测记录数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM test_record
+    </select>
+</mapper>

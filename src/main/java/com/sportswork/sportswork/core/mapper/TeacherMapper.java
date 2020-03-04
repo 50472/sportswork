@@ -12,7 +12,9 @@ import java.util.List;
 public interface TeacherMapper {
     void addTeacher(Teacher teacher);
     Teacher getTeacher(String id);
+    Teacher getTeacherByNumber(String number);
     List<Teacher> getAllTeachers();
     void deleteTeacher(String id);
     void setTeacher(Teacher teacher);
+    long getCount();
 }

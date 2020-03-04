@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.EquipmentLeaseMapper">
+    <!--添加器材租借-->
+    <insert id="addEquipmentLease" useGeneratedKeys="true" keyProperty="id" parameterType="EquipmentLease">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO equipment_lease (id, student_id, equipment_id, number, borrow_time, lending_time, return_time)
+        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{equipmentId,jdbcType=VARCHAR}
+        , #{number,jdbcType=VARCHAR}, #{borrowTime,jdbcType=VARCHAR}, #{lendingTime,jdbcType=VARCHAR}
+        , #{returnTime,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除器材租借-->
+    <delete id="deleteEquipmentLease" parameterType="String">
+        DELETE FROM equipment_lease
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置器材租借所有信息-->
+    <update id="setEquipmentLease" parameterType="EquipmentLease">
+        UPDATE equipment_lease
+        SET student_id = #{studentId},
+            equipment_id = #{equipmentId},
+            number = #{number},
+            borrow_time = #{borrowTime},
+            lending_time = #{lendingTime},
+            return_time = #{returnTime}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有器材租借-->
+    <resultMap id="selectEquipmentLeases" type="EquipmentLease"/>
+    <select id="getAllEquipmentLeases" resultMap="selectEquipmentLeases">
+        SELECT
+            id,
+            student_id,
+            equipment_id,
+            number,
+            borrow_time,
+            lending_time,
+            return_time
+        FROM equipment_lease
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取器材租借信息-->
+    <select id="getEquipmentLease" resultType="EquipmentLease">
+        SELECT
+            id,
+            student_id,
+            equipment_id,
+            number,
+            borrow_time,
+            lending_time,
+            return_time
+        FROM equipment_lease
+        WHERE id = #{id}
+    </select>
+
+    <!--获取器材租借数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM equipment_lease
+    </select>
+</mapper>

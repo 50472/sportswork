@@ -1,5 +1,183 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sportswork.sportswork.core.mapper.TeachingMapper">
+    <!--添加授课-->
+    <insert id="addTeaching" useGeneratedKeys="true" keyProperty="id" parameterType="Teaching">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO teaching (id, teacher_id, course_id, semester, state)
+        VALUES (#{id}, #{teacherId}, #{courseId},#{semester}, #{state})
+    </insert>
 
+    <!--删除授课-->
+    <delete id="deleteTeaching" parameterType="String">
+        DELETE FROM teaching
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置授课信息-->
+    <update id="setTeaching" parameterType="Teaching">
+        UPDATE teaching
+        SET teacher_id = #{teacherId},
+            course_id = #{courseId},
+            semester = #{semester},
+            state = #{state}
+        WHERE id = #{id}
+    </update>
+
+    <!--停止授课 -->
+    <update id="stopTeaching" parameterType="Teaching">
+        UPDATE teaching
+        SET state = #{state}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 多对一映射-->
+    <resultMap id="teachingResult" type="Teaching">
+        <id property="id" column="id"/>
+        <result property="semester" column="semester"/>
+        <result property="state" column="state"/>
+        <result property="teacherId" column="teacher_id"/>
+        <result property="courseId" column="course_id"/>
+        <association property="teacher" column="teacher_id" javaType="Teacher" resultMap="teacherResult"/>
+        <association property="course" column="course_id" javaType="Course" resultMap="courseResult"/>
+    </resultMap>
+
+    <resultMap id="teacherResult" type="Teacher">
+        <id property="id" column="tid"/>
+        <result property="name" column="tname"/>
+        <result property="sex" column="sex"/>
+        <result property="number" column="tnumber"/>
+    </resultMap>
+
+    <resultMap id="courseResult" type="Course">
+        <id property="id" column="cid"/>
+        <result property="name" column="cname"/>
+        <result property="classHour" column="classhour"/>
+        <result property="number" column="cnumber"/>
+    </resultMap>
+
+    <!--获取所有授课-->
+    <select id="getAllTeachings" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        ORDER BY (course.name + 0) ASC
+    </select>
+
+    <!--根据教师获取所有授课-->
+    <select id="getTeachingsByTeacher" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE teaching.teacher_id = #{teacherId}
+        ORDER BY (course.name + 0) ASC
+    </select>
+
+    <!--根据学期获取所有授课-->
+    <select id="getTeachingsBySemester" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE semester = #{semester}
+        ORDER BY (course.name + 0) ASC
+    </select>
+
+    <!--根据课程获取所有授课-->
+    <select id="getTeachingsByCourse" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE course_id = #{courseId}
+        ORDER BY (teacher.name + 0) ASC
+    </select>
+
+    <!--获取授课信息-->
+    <select id="getTeaching" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE teaching.id = #{id}
+    </select>
+
+    <!--获取授课信息-->
+    <select id="getTeachingsByCourseOrTeacher" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE 1=1
+        <if test='teacherName!=""'>
+            AND teacher.name = #{teacherName}
+        </if>
+        <if test='courseName!=""'>
+            AND course.name = #{courseName}
+        </if>
+    </select>
+
+    <!--获取授课数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM teaching
+    </select>
 </mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.GameMapper">
+    <!--添加竞赛-->
+    <insert id="addGame" useGeneratedKeys="true" keyProperty="id" parameterType="Game">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO game (id, name, time, area)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}
+        , #{area,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除竞赛-->
+    <delete id="deleteGame" parameterType="String">
+        DELETE FROM game
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置竞赛所有信息-->
+    <update id="setGame" parameterType="Game">
+        UPDATE game
+        SET name = #{name},
+            time = #{time},
+            area = #{area}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有竞赛-->
+    <resultMap id="selectGames" type="Game"/>
+    <select id="getAllGames" resultMap="selectGames">
+        SELECT
+            id,
+            name,
+            time,
+            area
+        FROM game
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取竞赛信息-->
+    <select id="getGame" resultType="Game">
+        SELECT
+             id,
+            name,
+            time,
+            area
+        FROM game
+        WHERE id = #{id}
+    </select>
+
+    <!--获取竞赛数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM game
+    </select>
+</mapper>

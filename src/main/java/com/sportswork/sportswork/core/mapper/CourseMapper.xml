@@ -3,8 +3,11 @@
 <mapper namespace="com.sportswork.sportswork.core.mapper.CourseMapper">
     <!--添加课程-->
     <insert id="addCourse" useGeneratedKeys="true" keyProperty="id" parameterType="Course">
-        INSERT INTO course (id, name, classhour)
-        VALUES (#{id}, #{name}, #{classHour})
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO course (id, name, classhour, number)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{classHour,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR})
     </insert>
 
     <!--删除课程-->
@@ -16,8 +19,8 @@
     <!--设置课程所有信息-->
     <update id="setCourse" parameterType="Course">
         UPDATE course
-        SET name = #{name}
-        SET classhour = #{classHour}
+        SET name = #{name},
+            classhour = #{classHour}
         WHERE id = #{id}
     </update>
 
@@ -27,7 +30,8 @@
         SELECT
             id,
             name,
-            classhour
+            classhour,
+            number
         FROM course
         ORDER BY (id + 0) ASC
     </select>
@@ -37,9 +41,26 @@
         SELECT
             id,
             name,
-            classhour
+            classhour,
+            number
         FROM course
         WHERE id = #{id}
     </select>
 
+    <!--通过课程编号获取课程信息-->
+    <select id="getCourseByNumber" resultType="Course">
+        SELECT
+            id,
+            name,
+            classhour,
+            number
+        FROM course
+        WHERE number = #{number}
+    </select>
+
+    <!--获取课程数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM course
+    </select>
 </mapper>

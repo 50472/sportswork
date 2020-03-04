@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.FieldLeaseMapper">
+    <!--添加场地租借-->
+    <insert id="addFieldLease" useGeneratedKeys="true" keyProperty="id" parameterType="FieldLease">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO field_lease (id, student_id, field_id, borrow_time, lending_time)
+        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{fieldId,jdbcType=VARCHAR}
+        , #{borrowTime,jdbcType=VARCHAR}, #{lendingTime,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除场地租借-->
+    <delete id="deleteFieldLease" parameterType="String">
+        DELETE FROM field_lease
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置场地租借所有信息-->
+    <update id="setFieldLease" parameterType="FieldLease">
+        UPDATE field_lease
+        SET student_id = #{studentId},
+            field_id = #{fieldId},
+            borrow_time = #{borrowTime},
+            lending_time = #{lendingTime}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有场地租借-->
+    <resultMap id="selectFieldLeases" type="FieldLease"/>
+    <select id="getAllFieldLeases" resultMap="selectFieldLeases">
+        SELECT
+            id,
+            student_id,
+            field_id,
+            borrow_time,
+            lending_time
+        FROM field_lease
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取场地租借信息-->
+    <select id="getFieldLease" resultType="FieldLease">
+        SELECT
+            id,
+            student_id,
+            field_id,
+            borrow_time,
+            lending_time
+        FROM field_lease
+        WHERE id = #{id}
+    </select>
+
+    <!--获取场地租借数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM field_lease
+    </select>
+</mapper>

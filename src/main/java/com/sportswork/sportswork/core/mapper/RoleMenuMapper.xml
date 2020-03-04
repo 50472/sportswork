@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.RoleMenuMapper">
+    <!--添加角色菜单栏-->
+    <insert id="addRoleMenu" useGeneratedKeys="true" keyProperty="id" parameterType="com.sportswork.sportswork.core.help.RoleMenu">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO role_menu (id, role_id, menu_id)
+        VALUES (#{id}, #{roleId}, #{menuId})
+    </insert>
+
+    <!--删除角色菜单栏-->
+    <delete id="deleteRoleMenu" parameterType="String">
+        DELETE FROM role_menu
+        WHERE id = #{id}
+    </delete>
+
+    <!--获取角色菜单栏数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM role_menu
+    </select>
+</mapper>

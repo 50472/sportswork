@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.FieldMapper">
+    <!--添加场地-->
+    <insert id="addField" useGeneratedKeys="true" keyProperty="id" parameterType="Field">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO field (id, name, state)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除场地-->
+    <delete id="deleteField" parameterType="String">
+        DELETE FROM field
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置场地所有信息-->
+    <update id="setField" parameterType="Field">
+        UPDATE field
+        SET name = #{name},
+            state = #{state}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有场地-->
+    <resultMap id="selectFields" type="Field"/>
+    <select id="getAllFields" resultMap="selectFields">
+        SELECT
+            id,
+            name,
+            state
+        FROM field
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取场地信息-->
+    <select id="getField" resultType="Field">
+        SELECT
+            id,
+            name,
+            state
+        FROM field
+        WHERE id = #{id}
+    </select>
+
+    <!--获取场地数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM field
+    </select>
+</mapper>

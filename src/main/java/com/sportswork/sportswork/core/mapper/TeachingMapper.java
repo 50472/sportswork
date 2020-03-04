@@ -12,9 +12,13 @@ import java.util.List;
 public interface TeachingMapper {
     void addTeaching(Teaching teaching);
     Teaching getTeaching(String id);
+    List<Teaching> getAllTeachings();
     List<Teaching> getTeachingsByTeacher(String teacherId);
     List<Teaching> getTeachingsBySemester(String semester);
-    List<Teaching> getTeachingsByCourse(String course);
+    List<Teaching> getTeachingsByCourse(String courseId);
+    List<Teaching> getTeachingsByCourseOrTeacher(String courseName, String teacherName);
     void deleteTeaching(String id);
     void setTeaching(Teaching teaching);
+    void stopTeaching(Teaching teaching);
+    long getCount();
 }

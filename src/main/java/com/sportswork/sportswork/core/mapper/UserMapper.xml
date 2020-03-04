@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.UserMapper">
+    <!--注册用户 -->
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id"  parameterType="User">
+        <selectKey order="BEFORE" resultType="String" keyProperty="id">
+            select REPLACE(UUID(), '-', '')
+        </selectKey>
+        INSERT INTO user (id, open_id, username, password, phone, register_time, role_id)
+        VALUES (#{id}, #{openId}, #{username}, #{password}, #{phone}, #{registerTime}, #{roleId})
+    </insert>
+
+    <!--删除用户-->
+    <delete id="delUser" parameterType="String">
+        DELETE FROM user
+        WHERE username = #{username}
+    </delete>
+
+    <!--停用用户 -->
+    <update id="stopUser" parameterType="User">
+        UPDATE user
+        SET is_del = #{isDel}
+        WHERE username = #{username}
+    </update>
+
+    <!--设置用户所有信息 -->
+    <update id="setUser" parameterType="User">
+        UPDATE user
+        SET
+            password = #{password},
+            phone    = #{phone}
+        WHERE id = #{id}
+    </update>
+
+    <!--设置用户微信open id-->
+    <update id="setOpenId" parameterType="User">
+        UPDATE user
+        SET open_id = #{openId}
+        WHERE id = #{id}
+    </update>
+
+    <!--设置用户账号-->
+    <update id="setUsername" parameterType="User">
+        UPDATE user
+        SET username = #{username}
+        WHERE id = #{id}
+    </update>
+
+    <!--设置用户密码-->
+    <update id="setUserPassword" parameterType="User">
+        UPDATE user
+        SET password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <!--设置用户手机-->
+    <update id="setPhone" parameterType="User">
+        UPDATE user
+        SET phone = #{phone}
+        WHERE id = #{id}
+    </update>
+
+    <update id="setUserIsDel" parameterType="User">
+        UPDATE user
+        SET isDel = #{isDel}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 一对多关联查询 -->
+    <resultMap id="userMap" type="User">
+        <id property="id" column="id"/>
+        <result property="openId" column="open_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="registerTime" column="register_time"/>
+        <result property="isDel" column="is_del"/>
+
+        <collection property="roleList" ofType="Role">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="description" property="description"/>
+        </collection>
+    </resultMap>
+
+    <!--查询所有用户及级联属性-->
+    <select id="getAllUsers" resultMap="userMap">
+        SELECT
+            user.id,
+            user.open_id,
+            user.username,
+            user.password,
+            user.phone,
+            user.register_time,
+            user.is_del,
+            user.role_id,
+            role.id,
+            role.name,
+            role.description
+        FROM user
+            LEFT OUTER JOIN user_role ON user.id = user_role.user_id
+            LEFT OUTER JOIN role ON user_role.role_id = role.id
+--         WHERE user_open_id IS NULL
+        ORDER BY register_time DESC
+    </select>
+
+    <!--通过id获取用户信息-->
+    <select id="getUser" parameterType="String" resultMap="userMap">
+        SELECT
+            user.id,
+            user.open_id,
+            user.username,
+            user.password,
+            user.phone,
+            user.register_time,
+            user.is_del,
+            user.role_id,
+            role.id,
+            role.name,
+            role.description
+        FROM user
+            LEFT OUTER JOIN user_role ON user.id = user_role.user_id
+            LEFT OUTER JOIN role ON user_role.role_id = role.id
+        WHERE user.id = #{id}
+    </select>
+
+    <!--通过微信openid获取用户-->
+    <select id="getUserByOpenId" parameterType="String" resultMap="userMap">
+        SELECT
+            user.id,
+            user.open_id,
+            user.username,
+            user.password,
+            user.phone,
+            user.register_time,
+            user.is_del,
+            user.role_id,
+            role.id,
+            role.name,
+            role.description
+        FROM user
+            LEFT OUTER JOIN user_role ON user.id = user_role.user_id
+            LEFT OUTER JOIN role ON user_role.role_id = role.id
+        WHERE open_id = #{openId}
+    </select>
+
+    <!--通过用户获取用户信息-->
+    <select id="getUserByUsername" parameterType="String" resultMap="userMap">
+        SELECT
+            user.id,
+            user.open_id,
+            user.username,
+            user.password,
+            user.phone,
+            user.register_time,
+            user.is_del,
+            user.role_id,
+            role.id,
+            role.name,
+            role.description
+        FROM user
+            LEFT OUTER JOIN user_role ON user.id = user_role.user_id
+            LEFT OUTER JOIN role ON user_role.role_id = role.id
+        WHERE username = #{username}
+    </select>
+
+    <!--获取注册用户数量-->
+    <select id="getUsersCount" resultType="Integer">
+        SELECT count(*)
+        FROM user
+    </select>
+
+    <!--获取当前用户id最大值，保证注册id的唯一性，未设置自增标识-->
+    <!--弃用-->
+    <select id="getUsersMaxId" resultType="Integer">
+        SELECT max(id + 0)
+        FROM user
+    </select>
+
+</mapper>

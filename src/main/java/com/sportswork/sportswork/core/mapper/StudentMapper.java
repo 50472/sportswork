@@ -15,4 +15,5 @@ public interface StudentMapper {
     List<Student> getAllStudents();
     void deleteStudent(String id);
     void setStudent(Student student);
+    long getCount();
 }

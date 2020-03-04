@@ -11,9 +11,13 @@ import java.util.List;
  */
 public interface ElectiveMapper {
     void addElective(Elective elective);
-    Elective getStudent(String studentId, String teachingId);
+    Elective getElective(String id);
+    List<Elective> getAllElectives();
     List<Elective> getElectivesByStudent(String studentId);
     List<Elective> getElectivesByTeaching(String teachingId);
-    void deleteElective(String studentId, String teachingId);
+    List<Elective> getElectivesByStudentOrTeacherOrCourse(
+            String studentName, String teacherName, String courseName);
+    void deleteElective(String id);
     void setElective(Elective elective);
+    long getCount();
 }

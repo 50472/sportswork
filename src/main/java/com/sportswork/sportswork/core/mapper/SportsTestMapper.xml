@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sportswork.sportswork.core.mapper.SportsTestMapper">
+    <!--添加体测-->
+    <insert id="addSportsTest" useGeneratedKeys="true" keyProperty="id" parameterType="SportsTest">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO sports_test (id, name, pass_mark)
+        VALUES (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{passMark,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除体测-->
+    <delete id="deleteSportsTest" parameterType="String">
+        DELETE FROM sports_test
+        WHERE id = #{id}
+    </delete>
+
+    <!--设置体测所有信息-->
+    <update id="setSportsTest" parameterType="SportsTest">
+        UPDATE sports_test
+        SET name = #{name},
+            pass_mark = #{passMark}
+        WHERE id = #{id}
+    </update>
+
+    <!--获取所有体测-->
+    <resultMap id="selectSportsTests" type="SportsTest"/>
+    <select id="getAllSportsTests" resultMap="selectSportsTests">
+        SELECT
+            id,
+            name,
+            pass_mark
+        FROM sports_test
+        ORDER BY (id + 0) ASC
+    </select>
+
+    <!--获取体测信息-->
+    <select id="getSportsTest" resultType="SportsTest">
+        SELECT
+            id,
+            name,
+            pass_mark
+        FROM sports_test
+        WHERE id = #{id}
+    </select>
+
+    <!--获取体测数量-->
+    <select id="getCount" resultType="long">
+        SELECT COUNT(1)
+        FROM sports_test
+    </select>
+</mapper>
