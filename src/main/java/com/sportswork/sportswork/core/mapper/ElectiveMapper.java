@@ -12,6 +12,7 @@ import java.util.List;
 public interface ElectiveMapper {
     void addElective(Elective elective);
     Elective getElective(String id);
+    Elective getElectiveByStudentIdAndTeachingId(String teachingId, String studentId);
     List<Elective> getAllElectives();
     List<Elective> getElectivesByStudent(String studentId);
     List<Elective> getElectivesByTeaching(String teachingId);
@@ -20,4 +21,5 @@ public interface ElectiveMapper {
     void deleteElective(String id);
     void setElective(Elective elective);
     long getCount();
+    void setScore(String id, String score);
 }

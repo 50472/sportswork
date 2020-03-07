@@ -35,6 +35,13 @@ public class EquipmentController {
         return new PageDTO<Equipment>().toPageDTO(equipmentServiceImp.getAllEquipments());
     }
 
+    @RequestMapping("/admin/equipment/getEquipmentByNameLike")
+    @PreAuthorize("hasAnyRole('admin')")
+    @ResponseBody
+    public Object getEquipmentByNameLike(String name){
+        return new PageDTO<Equipment>().toPageDTO(equipmentServiceImp.getEquipmentByNameLike(name));
+    }
+
     @RequestMapping(value = "/admin/equipment/add", method = RequestMethod.POST)
     @PreAuthorize("hasAnyRole('admin')")
     @ResponseBody

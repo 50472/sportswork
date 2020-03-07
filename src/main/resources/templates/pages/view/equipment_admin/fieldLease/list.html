@@ -17,42 +17,42 @@
     <script type="text/javascript" src="/hg-layui-admin-ui/lib/layui/layui.js"></script>
     <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/admin.js"></script>
     <!--[if lt IE 9]>
-    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
 
 <body class="layui-body-content">
-<div class="layui-fluid">
-    <div class="layui-card">
-        <div class="layui-card-header">
-            <i class="iconfont">&#xe6ac;</i>课程数据表
-            <span class="layui-layout-right">
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <i class="iconfont">&#xe6ac;</i>场地租借数据表
+                <span class="layui-layout-right">
                     <a href="javascript:;" hg-event="fullscreen">
                         <i class="layui-icon layui-icon-screen-full"></i>
                     </a>
                 </span>
-        </div>
+            </div>
 
-        <div class="layui-card-body">
-            <div class="layui-form">
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <input type="text" name="teacherName" placeholder="请输入教师名" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-inline">
-                        <input type="text" name="courseName" placeholder="请输入课程名" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-inline layui-show-xs-block">
-                        <button class="layui-btn layui-btn-lg layui-btn-normal" lay-submit lay-filter="sreach"><i
-                                class="layui-icon layui-icon-lg">&#xe615;</i></button>
+            <div class="layui-card-body">
+                <div class="layui-form">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <input type="text" name="fieldName" placeholder="请输入场地名" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-inline">
+                            <input type="text" name="studentNumber" placeholder="请输入学生学号" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn layui-btn-lg layui-btn-normal" lay-submit lay-filter="sreach"><i
+                                    class="layui-icon layui-icon-lg">&#xe615;</i></button>
+                        </div>
                     </div>
                 </div>
+                <table class="layui-hide" id="test" lay-filter="test"></table>
             </div>
-            <table class="layui-hide" id="test" lay-filter="test"></table>
         </div>
     </div>
-</div>
 </body>
 <script>
     //修改
@@ -60,9 +60,8 @@
         //obj通过行tool修改-lay-event
         var row = obj ? obj : hg.table.datatable('test', 'getSelected');
         if (row) {
-            hg.open('编辑授课' + row.data.name, '/admin/teaching/edit.html?id='+
-                row.data.id + '&teacherNumber=' + row.data.teacher.number + '&courseNumber=' + row.data.course.number +
-                '&semester=' + row.data.semester + '&state=' + row.data.state
+            hg.open('编辑授课' + row.data.name, '/equipment_admin/fieldLease/edit.html?id='+
+                row.data.id + '&lendingTime=' + row.data.lendingTime
                 , 600, 400);
         } else {
             hg.msg('请选中一行数据，再操作！');
@@ -73,7 +72,7 @@
         //obj通过行tool删除-lay-event
         var row = obj ? obj : hg.table.datatable('test', 'getSelected');
         if (row) {
-            hg.confirm("删除当前选中的授课，确定要删除吗？", function () {
+            hg.confirm("删除当前选中的场地租借记录，确定要删除吗？", function () {
                 //row.del(); //只删本地数据
                 var id = row.data.id;
                 $.ajax({
@@ -105,13 +104,13 @@
         hg.msg(data.elem.name+'开关checked：'+(data.elem.checked===true?'正在授课':'停止授课'));
         var state = 1;
         if(data.elem.checked===true)state = 0;
-        var teaching = {'id' : data.elem.name,'state' : state};
-        var teachingStr = JSON.stringify(teaching);
-        console.log("数据2"+teachingStr);
+        var fieldLease = {'id' : data.elem.name,'state' : state};
+        var fieldLeaseStr = JSON.stringify(fieldLease);
+        console.log("数据2"+fieldLeaseStr);
         $.ajax({
             type:"POST",
             url:"stop",
-            data: teachingStr,
+            data: fieldLeaseStr,
             dataType:'json',
             contentType: "application/json;charset=UTF-8",
             success:function (data) {
@@ -130,77 +129,75 @@
     });
     //监听表单提交事件
     hg.form.onsubmit('sreach', function (data) {
-        table = hg.table.datatable('test', '授课信息管理', 'getTeachingsByCourseOrTeacher', data, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+        table = hg.table.datatable('test', '场地租借信息管理', 'getFieldLeasesByFieldOrStudent', data, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
     });
-    //查看部门
-    function depts(obj, field) {
-        console.log(field); //点击的单元格
-        hg.msg(JSON.stringify(obj.data));
-    }
     var tableCols = [
         [{
-            field: 'teacher',
-            width: '15%',
-            title: '授课教师',
+            field: 'fieldName',
+            width: '10%',
+            title: '场地名',
             minWidth: 100,
             style: 'color: #ff5722;',
             sort: true,
             templet: function (d) {
-                return d.teacher.name
+                return d.field.name
             }
         }, {
-            field: 'course',
-            width: '15%',
-            title: '授课课程',
+            field: 'studentName',
+            width: '10%',
+            title: '租借学生',
             minWidth: 100,
             templet: function (d) {
-                return d.course.name
+                return d.student.name
             }
         }, {
-            field: 'semester',
-            width: '30%',
-            title: '学期',
+            field: 'studentNumber',
+            width: '10%',
+            title: '学号',
+            minWidth: 100,
+            templet: function (d) {
+                return d.student.number
+            }
+        }, {
+            field: 'borrowTimeDate',
+            width: '15%',
+            title: '借出时间',
             minWidth: 100
         }, {
-            field: 'wealth',
-            width: '15%',
-            title: '详情',
-            templet: function (d) {
-                return '<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="depts">查看</a>'
-            }
-        }, {
-            field: 'state',
+            field: 'lendingTime',
             width: '10%',
-            title: '授课状态',
+            title: '借用时间(小时)',
+            minWidth: 100
+        }, {
+            field: 'expirationTimeDate',
+            width: '15%',
+            title: '到期时间',
+            minWidth: 100
+        }, {
+            field: 'expire',
+            width: '10%',
+            title: '是否到期',
+            sort: true,
             templet: function (d) {
-                var checked = d.state == 0 ? 'checked' : '';
-                return '<input type="checkbox" name ="' + d.id + '" value= ' + d.state +
-                    ' lay-skin="switch" lay-text="正在授课|停止授课" lay-filter="doflag" ' + checked + '>'
+                return d.expire == 0 ?'未到期':'已到期';
             }
         }, {
             field: 'right',
-            width: '15%',
+            width: '20%',
             title: '操作',
             templet: function (d) {
                 return '<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a> <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>'
             }
         }]
     ];
-    var toolbar = [{
-        text: '添加',
-        layuiicon: '&#xe608;',
-        handler: function () {
-            hg.open('添加授课', '/admin/teaching/add.html', 600, 400);
-        }
-    },
+    var toolbar = [
         {
             text: '修改',
             layuiicon: '&#xe642;',
             handler: function (obj, row) {
                 if (row) {
-                    hg.open('编辑授课' + row.data.name, '/admin/teaching/edit.html?id='+
-                        row.data.id + '&teacherNumber=' + row.data.teacher.number + '&courseNumber=' + row.data.course.number +
-                        '&semester=' + row.data.semester + '&state=' + row.data.state
+                    hg.open('编辑授课' + row.data.name, '/equipment_admin/fieldLease/edit.html?id='+
+                        row.data.id + '&lendingTime=' + row.data.lendingTime
                         , 600, 400);
                 } else {
                     hg.msg('请选中一行数据，再操作！');
@@ -241,7 +238,7 @@
         }
     ];
     //基本数据表格
-    var table = hg.table.datatable('test', '授课信息管理', 'getAllTeachings', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+    var table = hg.table.datatable('test', '场地租借信息管理', 'getAllFieldLeases', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
 
 </script>
 

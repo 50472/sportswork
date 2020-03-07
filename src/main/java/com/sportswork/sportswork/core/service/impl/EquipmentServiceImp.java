@@ -35,6 +35,11 @@ public class EquipmentServiceImp implements IEquipmentService {
     }
 
     @Override
+    public List<Equipment> getEquipmentByNameLike(String name) {
+        return equipmentMapper.getEquipmentByNameLike(name);
+    }
+
+    @Override
     public List<Equipment> getAllEquipments() {
         return equipmentMapper.getAllEquipments();
     }

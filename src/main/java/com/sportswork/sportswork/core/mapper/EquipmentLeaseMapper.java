@@ -12,8 +12,10 @@ import java.util.List;
 public interface EquipmentLeaseMapper {
     void addEquipmentLease(EquipmentLease equipmentLease);
     EquipmentLease getEquipmentLease(String id);
+    List<EquipmentLease> getEquipmentLeaseByEquipmentNameOrStudentNumber(String equipmentName, String studentNumber);
     List<EquipmentLease> getAllEquipmentLeases();
     void deleteEquipmentLease(String id);
     void setEquipmentLease(EquipmentLease equipmentLease);
+    void setReturn(EquipmentLease equipmentLease);
     long getCount();
 }

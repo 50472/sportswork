@@ -12,6 +12,7 @@ import java.util.List;
 public interface IEquipmentService {
     void addEquipment(Equipment equipment);
     Equipment getEquipment(String id);
+    List<Equipment> getEquipmentByNameLike(String name);
     List<Equipment> getAllEquipments();
     void deleteEquipment(String id);
     void setEquipment(Equipment equipment);

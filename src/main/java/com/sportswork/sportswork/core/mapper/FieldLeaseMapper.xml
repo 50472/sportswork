@@ -6,9 +6,8 @@
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
         </selectKey>
-        INSERT INTO field_lease (id, student_id, field_id, borrow_time, lending_time)
-        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{fieldId,jdbcType=VARCHAR}
-        , #{borrowTime,jdbcType=VARCHAR}, #{lendingTime,jdbcType=VARCHAR})
+        INSERT INTO field_lease (id, student_id, field_id, borrow_time, lending_time, expire)
+        VALUES (#{id}, #{studentId}, #{fieldId}, #{borrowTime}, #{lendingTime}, #{expire})
     </insert>
 
     <!--删除场地租借-->
@@ -20,36 +19,86 @@
     <!--设置场地租借所有信息-->
     <update id="setFieldLease" parameterType="FieldLease">
         UPDATE field_lease
-        SET student_id = #{studentId},
-            field_id = #{fieldId},
-            borrow_time = #{borrowTime},
-            lending_time = #{lendingTime}
+        SET expire = #{expire}
         WHERE id = #{id}
     </update>
 
+    <!-- 多对一映射-->
+    <resultMap id="fieldLeaseResult" type="FieldLease">
+        <id property="id" column="id"/>
+        <result property="borrowTime" column="borrow_time"/>
+        <result property="lendingTime" column="lending_time"/>
+        <result property="expire" column="expire"/>
+        <result property="studentId" column="student_id"/>
+        <result property="fieldId" column="field_id"/>
+        <association property="student" column="student_id" javaType="Student" resultMap="studentResult"/>
+        <association property="field" column="field_id" javaType="Field" resultMap="fieldResult"/>
+    </resultMap>
+
+    <resultMap id="studentResult" type="Student">
+        <id property="id" column="s_id"/>
+        <result property="name" column="s_name"/>
+        <result property="number" column="number"/>
+    </resultMap>
+
+    <resultMap id="fieldResult" type="Field">
+        <id property="id" column="f_id"/>
+        <result property="name" column="f_name"/>
+        <result property="state" column="state"/>
+    </resultMap>
+
     <!--获取所有场地租借-->
-    <resultMap id="selectFieldLeases" type="FieldLease"/>
-    <select id="getAllFieldLeases" resultMap="selectFieldLeases">
+    <select id="getAllFieldLeases" resultMap="fieldLeaseResult">
         SELECT
-            id,
-            student_id,
-            field_id,
-            borrow_time,
-            lending_time
+            field_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number,
+            field.id f_id,
+            field.name f_name,
+            field.state
         FROM field_lease
-        ORDER BY (id + 0) ASC
+            LEFT OUTER JOIN student ON field_lease.student_id = student.id
+            LEFT OUTER JOIN field ON field_lease.field_id = field.id
+        ORDER BY (field.name + 0) ASC
     </select>
 
     <!--获取场地租借信息-->
-    <select id="getFieldLease" resultType="FieldLease">
+    <select id="getFieldLease" resultMap="fieldLeaseResult">
         SELECT
-            id,
-            student_id,
-            field_id,
-            borrow_time,
-            lending_time
+            field_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number,
+            field.id f_id,
+            field.name f_name,
+            field.state
         FROM field_lease
-        WHERE id = #{id}
+            LEFT OUTER JOIN student ON field_lease.student_id = student.id
+            LEFT OUTER JOIN field ON field_lease.field_id = field.id
+        WHERE field_lease.id = #{id}
+    </select>
+
+    <!--通过场地名模糊查找或者学生学号查找获取场地租借信息-->
+    <select id="getFieldLeaseByFieldNameLikeOrStudentNumber" resultMap="fieldLeaseResult">
+        SELECT
+            field_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number,
+            field.id f_id,
+            field.name f_name,
+            field.state
+        FROM field_lease
+            LEFT OUTER JOIN student ON field_lease.student_id = student.id
+            LEFT OUTER JOIN field ON field_lease.field_id = field.id
+        WHERE 1=1
+        <if test='fieldName!=""'>
+            AND field.name like "%"#{fieldName}"%"
+        </if>
+        <if test='studentNumber!=""'>
+            AND student.number = #{studentNumber}
+        </if>
     </select>
 
     <!--获取场地租借数量-->

@@ -1,6 +1,7 @@
 package com.sportswork.sportswork.core.service;
 
 import com.sportswork.sportswork.core.entity.FieldLease;
+import com.sportswork.sportswork.core.service.dto.FieldLeaseDTO;
 
 import java.util.List;
 
@@ -10,8 +11,9 @@ import java.util.List;
  * @description
  */
 public interface IFieldLeaseService {
-    void addFieldLease(FieldLease fieldLease);
+    void addFieldLease(FieldLeaseDTO fieldLeaseDTO);
     FieldLease getFieldLease(String id);
+    List<FieldLease> getFieldLeaseByFieldNameLikeOrStudentNumber(String fieldName, String studentNumber);
     List<FieldLease> getAllFieldLeases();
     void deleteFieldLease(String id);
     void setFieldLease(FieldLease fieldLease);

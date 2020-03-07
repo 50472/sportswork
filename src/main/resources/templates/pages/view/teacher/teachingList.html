@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="hg-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="/hg-layui-admin-ui/css/font.css">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/admin/admin.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollbar.css">
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollBar.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/admin.js"></script>
+    <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body class="layui-body-content">
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <i class="iconfont">&#xe6ac;</i>我的授课
+                <span class="layui-layout-right">
+                    <a href="javascript:;" hg-event="fullscreen">
+                        <i class="layui-icon layui-icon-screen-full"></i>
+                    </a>
+                </span>
+            </div>
+
+            <div class="layui-card-body">
+                <table class="layui-hide" id="test" lay-filter="test"></table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //查看选课记录
+    function selectElevtive(obj) {
+        var row = obj ? obj : hg.table.datatable('test', 'getSelected');
+        if (row) {
+            location.href="/teacher/electiveList.html?teachingId=" + row.data.id;
+        } else {
+            hg.msg('请选中一行数据，再操作！');
+        }
+    }
+    var tableCols = [
+        [{
+            field: 'teacher',
+            width: '15%',
+            title: '授课教师',
+            minWidth: 100,
+            style: 'color: #ff5722;',
+            sort: true,
+            templet: function (d) {
+                return d.teacher.name
+            }
+        }, {
+            field: 'course',
+            width: '15%',
+            title: '授课课程',
+            minWidth: 100,
+            templet: function (d) {
+                return d.course.name
+            }
+        }, {
+            field: 'semester',
+            width: '30%',
+            title: '学期',
+            minWidth: 100
+        }, {
+            field: 'state',
+            width: '10%',
+            title: '授课状态',
+            templet: function (d) {
+                var checked = d.state == 0 ? 'checked' : '';
+                return '<input type="checkbox" name ="' + d.id + '" value= ' + d.state +
+                    ' lay-skin="switch" lay-text="正在授课|停止授课" lay-filter="doflag" ' + checked + '>'
+            }
+        }, {
+            field: 'right',
+            width: '15%',
+            title: '操作',
+            templet: function (d) {
+                return '<a class="layui-btn layui-btn-xs" lay-event="selectElevtive">查看学生选课记录</a>'
+            }
+        }]
+    ];
+    var toolbar = [
+    ];
+    //基本数据表格
+    var table = hg.table.datatable('test', '授课信息管理', 'getTeachingsByTeacher', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+
+</script>
+
+</html>

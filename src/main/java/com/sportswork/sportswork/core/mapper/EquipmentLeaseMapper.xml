@@ -6,10 +6,9 @@
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
         </selectKey>
-        INSERT INTO equipment_lease (id, student_id, equipment_id, number, borrow_time, lending_time, return_time)
-        VALUES (#{id,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, #{equipmentId,jdbcType=VARCHAR}
-        , #{number,jdbcType=VARCHAR}, #{borrowTime,jdbcType=VARCHAR}, #{lendingTime,jdbcType=VARCHAR}
-        , #{returnTime,jdbcType=VARCHAR})
+        INSERT INTO equipment_lease (id, student_id, equipment_id, number, borrow_time, return_time, state)
+        VALUES (#{id}, #{studentId}, #{equipmentId}
+        , #{number}, #{borrowTime}, #{returnTime}, #{state})
     </insert>
 
     <!--删除器材租借-->
@@ -21,42 +20,96 @@
     <!--设置器材租借所有信息-->
     <update id="setEquipmentLease" parameterType="EquipmentLease">
         UPDATE equipment_lease
-        SET student_id = #{studentId},
-            equipment_id = #{equipmentId},
+        SET
             number = #{number},
             borrow_time = #{borrowTime},
-            lending_time = #{lendingTime},
-            return_time = #{returnTime}
+            return_time = #{returnTime},
+            state = #{state}
         WHERE id = #{id}
     </update>
 
+    <!--设置器材租借借用信息-->
+    <update id="setReturn" parameterType="EquipmentLease">
+        UPDATE equipment_lease
+        SET
+            return_time = #{returnTime},
+            state = #{state}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 多对一映射-->
+    <resultMap id="equipmentLeaseResult" type="EquipmentLease">
+        <id property="id" column="id"/>
+        <result property="borrowTime" column="borrow_time"/>
+        <result property="returnTime" column="return_time"/>
+        <result property="number" column="number"/>
+        <result property="state" column="state"/>
+        <result property="studentId" column="student_id"/>
+        <result property="equipmentId" column="equipment_id"/>
+        <association property="student" column="student_id" javaType="Student" resultMap="studentResult"/>
+        <association property="equipment" column="equipment_id" javaType="Equipment" resultMap="equipmentResult"/>
+    </resultMap>
+
+    <resultMap id="studentResult" type="Student">
+        <id property="id" column="s_id"/>
+        <result property="name" column="s_name"/>
+        <result property="number" column="s_number"/>
+    </resultMap>
+
+    <resultMap id="equipmentResult" type="Equipment">
+        <id property="id" column="e_id"/>
+        <result property="name" column="e_name"/>
+    </resultMap>
+
     <!--获取所有器材租借-->
-    <resultMap id="selectEquipmentLeases" type="EquipmentLease"/>
-    <select id="getAllEquipmentLeases" resultMap="selectEquipmentLeases">
+    <select id="getAllEquipmentLeases" resultMap="equipmentLeaseResult">
         SELECT
-            id,
-            student_id,
-            equipment_id,
-            number,
-            borrow_time,
-            lending_time,
-            return_time
+            equipment_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number s_number,
+            equipment.id e_id,
+            equipment.name e_name
         FROM equipment_lease
-        ORDER BY (id + 0) ASC
+            LEFT OUTER JOIN student ON equipment_lease.student_id = student.id
+            LEFT OUTER JOIN equipment ON equipment_lease.equipment_id = equipment.id
+        ORDER BY (equipment.name + 0) ASC
     </select>
 
     <!--获取器材租借信息-->
-    <select id="getEquipmentLease" resultType="EquipmentLease">
+    <select id="getEquipmentLease" resultMap="equipmentLeaseResult">
         SELECT
-            id,
-            student_id,
-            equipment_id,
-            number,
-            borrow_time,
-            lending_time,
-            return_time
+            equipment_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number s_number,
+            equipment.id e_id,
+            equipment.name e_name
         FROM equipment_lease
-        WHERE id = #{id}
+            LEFT OUTER JOIN student ON equipment_lease.student_id = student.id
+            LEFT OUTER JOIN equipment ON equipment_lease.equipment_id = equipment.id
+        WHERE equipment_lease.id = #{id}
+    </select>
+
+    <!--获取器材租借信息-->
+    <select id="getEquipmentLeaseByEquipmentNameOrStudentNumber" resultMap="equipmentLeaseResult">
+        SELECT
+            equipment_lease.*,
+            student.id s_id,
+            student.name s_name,
+            student.number s_number,
+            equipment.id e_id,
+            equipment.name e_name
+        FROM equipment_lease
+            LEFT OUTER JOIN student ON equipment_lease.student_id = student.id
+            LEFT OUTER JOIN equipment ON equipment_lease.equipment_id = equipment.id
+        WHERE 1=1
+        <if test='equipmentName!=""'>
+            AND equipment.name like "%"#{equipmentName}"%"
+        </if>
+        <if test='studentNumber!=""'>
+            AND student.number = #{studentNumber}
+        </if>
     </select>
 
     <!--获取器材租借数量-->

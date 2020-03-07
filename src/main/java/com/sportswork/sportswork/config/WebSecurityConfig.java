@@ -40,6 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/home", "/index", "/register", "/login", "/logout", "/menu",
                         "/show", "/info", "/283/**", "/session/invalid","/images/**","/hg-layui-admin-ui/**").permitAll()
                 .antMatchers("/admin/**").hasRole("admin")
+                .antMatchers("/equipment_admin/**").hasRole("equipment_admin")
+                .antMatchers("/student/**").hasRole("student")
+                .antMatchers("/teacher/**").hasRole("teacher")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()

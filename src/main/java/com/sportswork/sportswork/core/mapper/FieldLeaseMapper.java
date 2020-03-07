@@ -12,6 +12,7 @@ import java.util.List;
 public interface FieldLeaseMapper {
     void addFieldLease(FieldLease fieldLease);
     FieldLease getFieldLease(String id);
+    List<FieldLease> getFieldLeaseByFieldNameLikeOrStudentNumber(String fieldName, String studentNumber);
     List<FieldLease> getAllFieldLeases();
     void deleteFieldLease(String id);
     void setFieldLease(FieldLease fieldLease);

@@ -34,6 +34,11 @@ public class FieldServiceImp implements IFieldService {
     }
 
     @Override
+    public List<Field> getFieldByNameLike(String name) {
+        return fieldMapper.getFieldByNameLike(name);
+    }
+
+    @Override
     public List<Field> getAllFields() {
         return fieldMapper.getAllFields();
     }

@@ -2,6 +2,7 @@ package com.sportswork.sportswork.core.service.impl;
 
 import com.sportswork.sportswork.core.entity.Elective;
 import com.sportswork.sportswork.core.mapper.ElectiveMapper;
+import com.sportswork.sportswork.core.mapper.TeachingMapper;
 import com.sportswork.sportswork.core.service.IElectiveService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -62,5 +63,25 @@ public class ElectiveServiceImp implements IElectiveService {
     public Elective setElective(Elective elective) {
         electiveMapper.setElective(elective);
         return elective;
+    }
+
+    @Override
+    public void studentElective(String teachingId, String studentId) {
+        if(exist(teachingId,studentId)){
+            return;
+        }
+        Elective elective = new Elective()
+                .setStudentId(studentId)
+                .setTeachingId(teachingId);
+        electiveMapper.addElective(elective);
+    }
+
+    public boolean exist(String teachingId, String studentId){
+        return electiveMapper.getElectiveByStudentIdAndTeachingId(teachingId,studentId)!= null;
+    }
+
+    @Override
+    public void teacherScoring(String electiveId, String score) {
+        electiveMapper.setScore(electiveId, score);
     }
 }

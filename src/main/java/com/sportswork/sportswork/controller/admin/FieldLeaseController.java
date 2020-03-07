@@ -2,6 +2,8 @@ package com.sportswork.sportswork.controller.admin;
 
 import com.sportswork.sportswork.core.entity.Role;
 import com.sportswork.sportswork.core.entity.FieldLease;
+import com.sportswork.sportswork.core.entity.Teaching;
+import com.sportswork.sportswork.core.service.dto.FieldLeaseDTO;
 import com.sportswork.sportswork.core.service.dto.PageDTO;
 import com.sportswork.sportswork.core.service.impl.FieldLeaseServiceImp;
 import lombok.extern.slf4j.Slf4j;
@@ -35,11 +37,19 @@ public class FieldLeaseController {
         return new PageDTO<FieldLease>().toPageDTO(fieldLeaseServiceImp.getAllFieldLeases());
     }
 
-    @RequestMapping(value = "/admin/fieldLease/add", method = RequestMethod.POST)
+    @RequestMapping("/admin/fieldLease/getFieldLeasesByFieldOrStudent")
     @PreAuthorize("hasAnyRole('admin')")
     @ResponseBody
-    public String add(FieldLease fieldLease) {
-        fieldLeaseServiceImp.addFieldLease(fieldLease);
+    public Object getFieldLeasesByFieldOrStudent(String fieldName, String studentNumber){
+        return new PageDTO<FieldLease>().toPageDTO(
+                fieldLeaseServiceImp.getFieldLeaseByFieldNameLikeOrStudentNumber(fieldName, studentNumber));
+    }
+
+    @RequestMapping(value = "/admin/field/addLease", method = RequestMethod.POST)
+    @PreAuthorize("hasAnyRole('admin')")
+    @ResponseBody
+    public String addLease(FieldLeaseDTO fieldLeaseDTO) {
+        fieldLeaseServiceImp.addFieldLease(fieldLeaseDTO);
         return "success";
     }
 

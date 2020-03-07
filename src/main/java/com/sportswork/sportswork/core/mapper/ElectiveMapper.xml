@@ -25,6 +25,14 @@
         WHERE id = #{id}
     </update>
 
+    <!--设置选课记录信息-->
+    <update id="setScore">
+        UPDATE elective
+        SET
+            score = #{score}
+        WHERE id = #{id}
+    </update>
+
     <!-- 多对一映射-->
     <resultMap id="electiveResult" type="Elective">
         <id property="id" column="e_id"/>
@@ -154,27 +162,77 @@
     </select>
 
     <!--通过学生获取选课记录-->
-    <select id="getElectivesByStudent" resultMap="selectElectives">
+    <select id="getElectivesByStudent" resultMap="electiveResult">
         SELECT
-            id,
+            elective.id e_id,
             student_id,
             teaching_id,
-            score
+            score,
+
+            student.id s_id,
+            student.name s_name,
+            student.sex s_sex,
+            student.number s_number,
+            profession,
+
+            teaching.id ting_id,
+            teaching.semester,
+            teaching.state,
+            teacher_id,
+            course_id,
+
+            teacher.id t_id,
+            teacher.name t_name,
+            teacher.sex t_sex,
+            teacher.number t_number,
+
+            course.id c_id,
+            course.name c_name,
+            course.classhour,
+            course.number c_number
         FROM elective
+            LEFT OUTER JOIN teaching ON elective.teaching_id = teaching.id
+            LEFT OUTER JOIN student ON elective.student_id = student.id
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
         WHERE student_id = #{studentId}
-        ORDER BY (id + 0) ASC
     </select>
 
     <!--通过教师获取选课记录-->
-    <select id="getElectivesByTeaching" resultMap="selectElectives">
+    <select id="getElectivesByTeaching" resultMap="electiveResult">
         SELECT
-            id,
+            elective.id e_id,
             student_id,
             teaching_id,
-            score
+            score,
+
+            student.id s_id,
+            student.name s_name,
+            student.sex s_sex,
+            student.number s_number,
+            profession,
+
+            teaching.id ting_id,
+            teaching.semester,
+            teaching.state,
+            teacher_id,
+            course_id,
+
+            teacher.id t_id,
+            teacher.name t_name,
+            teacher.sex t_sex,
+            teacher.number t_number,
+
+            course.id c_id,
+            course.name c_name,
+            course.classhour,
+            course.number c_number
         FROM elective
-        WHERE teaching_id = #{teachingId}
-        ORDER BY (id + 0) ASC
+            LEFT OUTER JOIN teaching ON elective.teaching_id = teaching.id
+            LEFT OUTER JOIN student ON elective.student_id = student.id
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+        WHERE elective.teaching_id = #{teachingId}
     </select>
 
     <!--获取选课记录信息-->
@@ -186,6 +244,17 @@
             score
         FROM elective
         WHERE id = #{id}
+    </select>
+
+    <!--获取选课记录信息-->
+    <select id="getElectiveByStudentIdAndTeachingId" resultType="Elective">
+        SELECT
+            id,
+            student_id,
+            teaching_id,
+            score
+        FROM elective
+        WHERE teaching_id = #{teachingId} AND student_id = #{studentId}
     </select>
 
     <!--获取选课记录数量-->

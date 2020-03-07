@@ -12,8 +12,10 @@ import java.util.List;
 public interface EquipmentMapper {
     void addEquipment(Equipment equipment);
     Equipment getEquipment(String id);
+    List<Equipment> getEquipmentByNameLike(String _parameter);
     List<Equipment> getAllEquipments();
     void deleteEquipment(String id);
     void setEquipment(Equipment equipment);
+    void setEquipmentLend(Equipment equipment);
     long getCount();
 }

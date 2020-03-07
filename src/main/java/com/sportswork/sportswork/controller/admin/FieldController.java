@@ -35,6 +35,13 @@ public class FieldController {
         return new PageDTO<Field>().toPageDTO(fieldServiceImp.getAllFields());
     }
 
+    @RequestMapping("/admin/field/getFieldByNameLike")
+    @PreAuthorize("hasAnyRole('admin')")
+    @ResponseBody
+    public Object getFieldByNameLike(String name){
+        return new PageDTO<Field>().toPageDTO(fieldServiceImp.getFieldByNameLike(name));
+    }
+
     @RequestMapping(value = "/admin/field/add", method = RequestMethod.POST)
     @PreAuthorize("hasAnyRole('admin')")
     @ResponseBody

@@ -15,6 +15,7 @@ public class SecurityUserInfo implements Serializable, UserDetails {
     private String username;
     private String password;
     private String roleCode;
+    private String roleId;
     private boolean accountNonExpired;
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
@@ -26,6 +27,7 @@ public class SecurityUserInfo implements Serializable, UserDetails {
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.roleCode = user.getRoleCode();
+        this.roleId = user.getRoleId();
         this.accountNonExpired = accountNonExpired;
         this.accountNonLocked = user.getIsDelBoolean();
         this.credentialsNonExpired = credentialsNonExpired;
@@ -45,6 +47,10 @@ public class SecurityUserInfo implements Serializable, UserDetails {
     @Override
     public String getUsername() {
         return username;
+    }
+
+    public String getRoleId() {
+        return roleId;
     }
 
     @Override

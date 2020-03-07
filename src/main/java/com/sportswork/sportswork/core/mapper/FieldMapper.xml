@@ -24,6 +24,13 @@
         WHERE id = #{id}
     </update>
 
+    <!--设置场地状态-->
+    <update id="setFieldState">
+        UPDATE field
+        SET state = #{state}
+        WHERE id = #{id}
+    </update>
+
     <!--获取所有场地-->
     <resultMap id="selectFields" type="Field"/>
     <select id="getAllFields" resultMap="selectFields">
@@ -43,6 +50,19 @@
             state
         FROM field
         WHERE id = #{id}
+    </select>
+
+    <!--通过名字获取场地信息-->
+    <select id="getFieldByNameLike" resultType="Field" parameterType="String">
+        SELECT
+            id,
+            name,
+            state
+        FROM field
+        WHERE 1=1
+        <if test='_parameter!=""'>
+            AND name like "%"#{_parameter}"%"
+        </if>
     </select>
 
     <!--获取场地数量-->

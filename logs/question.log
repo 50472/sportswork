@@ -1,35 +1,69 @@
-2020/03/05-00:24 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
-2020/03/05-00:24 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
-2020/03/05-00:48 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 2240 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
-2020/03/05-00:48 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
-2020/03/05-00:48 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
-2020/03/05-00:48 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020/03/05-00:48 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1623 ms
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ccca349, org.springframework.security.web.context.SecurityContextPersistenceFilter@11fb0f64, org.springframework.security.web.header.HeaderWriterFilter@137d1274, org.springframework.security.web.authentication.logout.LogoutFilter@5b0e57b0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5f8ab37c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5096ffd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dc665b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d0b4178, org.springframework.security.web.session.SessionManagementFilter@444df301, org.springframework.security.web.access.ExceptionTranslationFilter@5507b94a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31f14857]
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
-2020/03/05-00:48 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2020/03/05-00:48 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
-2020/03/05-00:48 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.243 seconds (JVM running for 7.661)
-2020/03/05-00:48 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020/03/05-00:48 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
-2020/03/05-00:48 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 10 ms
-2020/03/05-00:48 [http-nio-8081-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
-2020/03/05-00:49 [http-nio-8081-exec-8] ERROR org.thymeleaf.TemplateEngine: [THYMELEAF][http-nio-8081-exec-8] Exception processing template "/pages/view/admin/fieldLease/list": Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+2020/03/08-00:00 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:00 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 22456 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:00 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:00 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:00 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1470 ms
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12117a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@74739e86, org.springframework.security.web.header.HeaderWriterFilter@7b913fb8, org.springframework.security.web.authentication.logout.LogoutFilter@33501b8d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f59083e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59fdff51, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e6981af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@778878a5, org.springframework.security.web.session.SessionManagementFilter@6a2df7b, org.springframework.security.web.access.ExceptionTranslationFilter@221f7906, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1600565]
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:00 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:00 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.924 seconds (JVM running for 7.017)
+2020/03/08-00:01 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:01 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:01 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-00:01 [http-nio-8081-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:02 [http-nio-8081-exec-8] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy91.getFieldByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.FieldServiceImp.getFieldByNameLike(FieldServiceImp.java:38)
+	at com.sportswork.sportswork.core.service.impl.FieldServiceImp$$FastClassBySpringCGLIB$$94bf9c5e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.FieldServiceImp$$EnhancerBySpringCGLIB$$aaab90a4.getFieldByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.FieldController.getFieldByNameLike(FieldController.java:42)
+	at com.sportswork.sportswork.controller.admin.FieldController$$FastClassBySpringCGLIB$$d3508ef2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.FieldController$$EnhancerBySpringCGLIB$$27a3a47f.getFieldByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -105,17 +139,82 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/page
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020/03/05-00:49 [http-nio-8081-exec-8] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.GeneratedMethodAccessor136.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:02 [http-nio-8081-exec-8] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String']
+2020/03/08-00:03 [http-nio-8081-exec-4] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.getEquipmentByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp.getEquipmentByNameLike(EquipmentServiceImp.java:39)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$FastClassBySpringCGLIB$$98ff972.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$EnhancerBySpringCGLIB$$93e57460.getEquipmentByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.EquipmentController.getEquipmentByNameLike(EquipmentController.java:42)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$FastClassBySpringCGLIB$$edb66c86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$EnhancerBySpringCGLIB$$38d259bb.getEquipmentByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -191,17 +290,105 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/page
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020/03/05-00:52 [http-nio-8081-exec-10] ERROR org.thymeleaf.TemplateEngine: [THYMELEAF][http-nio-8081-exec-10] Exception processing template "/pages/view/admin/fieldLease/list": Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.GeneratedMethodAccessor136.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:03 [http-nio-8081-exec-4] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'name' in 'class java.lang.String']
+2020/03/08-00:06 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:06 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:06 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:06 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 7292 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:06 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:06 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:06 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:06 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1677 ms
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48376961, org.springframework.security.web.context.SecurityContextPersistenceFilter@30ec01ee, org.springframework.security.web.header.HeaderWriterFilter@2cf519aa, org.springframework.security.web.authentication.logout.LogoutFilter@11a70a8a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31e27dc5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19a97fbb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8dddce3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1edb0d20, org.springframework.security.web.session.SessionManagementFilter@5093b9a4, org.springframework.security.web.access.ExceptionTranslationFilter@56a5f0d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@378b80a6]
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:06 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:06 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:06 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.349 seconds (JVM running for 6.054)
+2020/03/08-00:06 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:06 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:06 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 9 ms
+2020/03/08-00:06 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:06 [http-nio-8081-exec-2] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.getEquipmentByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp.getEquipmentByNameLike(EquipmentServiceImp.java:39)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$FastClassBySpringCGLIB$$98ff972.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$EnhancerBySpringCGLIB$$3ee52f11.getEquipmentByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.EquipmentController.getEquipmentByNameLike(EquipmentController.java:42)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$FastClassBySpringCGLIB$$edb66c86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$EnhancerBySpringCGLIB$$a5fc584f.getEquipmentByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -277,17 +464,106 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/page
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020/03/05-00:52 [http-nio-8081-exec-10] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/pages/view/admin/fieldLease/list], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:06 [http-nio-8081-exec-2] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String']
+2020/03/08-00:07 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:07 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:07 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:07 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 21336 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:07 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:07 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:07 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:07 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1843 ms
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35fc7e51, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d57cca8, org.springframework.security.web.header.HeaderWriterFilter@1445c35f, org.springframework.security.web.authentication.logout.LogoutFilter@1ffb7568, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d7d9559, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4031cfbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35aa010a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@565453af, org.springframework.security.web.session.SessionManagementFilter@1a0d3484, org.springframework.security.web.access.ExceptionTranslationFilter@493ed2e6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21242214]
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:07 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:07 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:07 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.324 seconds (JVM running for 5.804)
+2020/03/08-00:08 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:08 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:08 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 9 ms
+2020/03/08-00:08 [http-nio-8081-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:08 [http-nio-8081-exec-1] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.getEquipmentByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp.getEquipmentByNameLike(EquipmentServiceImp.java:39)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$FastClassBySpringCGLIB$$98ff972.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$EnhancerBySpringCGLIB$$f6596cd4.getEquipmentByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.EquipmentController.getEquipmentByNameLike(EquipmentController.java:42)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$FastClassBySpringCGLIB$$edb66c86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$EnhancerBySpringCGLIB$$8d1a24dc.getEquipmentByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
@@ -363,20 +639,642 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/page
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020/03/05-02:23 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
-2020/03/05-02:23 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
-2020/03/05-02:28 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 19708 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
-2020/03/05-02:28 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
-2020/03/05-02:28 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
-2020/03/05-02:28 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020/03/05-02:28 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 3068 ms
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bd8617f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d4ed348, org.springframework.security.web.header.HeaderWriterFilter@3e88d9b3, org.springframework.security.web.authentication.logout.LogoutFilter@778e1e62, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@dc4749d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e0410c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@653806d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69fec4b2, org.springframework.security.web.session.SessionManagementFilter@13c64e8b, org.springframework.security.web.access.ExceptionTranslationFilter@ef20aa3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7dfb7ce8]
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
-2020/03/05-02:28 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2020/03/05-02:28 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
-2020/03/05-02:28 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 8.538 seconds (JVM running for 12.627)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:08 [http-nio-8081-exec-1] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'Name' in 'class java.lang.String']
+2020/03/08-00:09 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:09 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:09 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:09 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 6584 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:09 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:09 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:09 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:09 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1952 ms
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@570ddda8, org.springframework.security.web.context.SecurityContextPersistenceFilter@adbf354, org.springframework.security.web.header.HeaderWriterFilter@3f3359c1, org.springframework.security.web.authentication.logout.LogoutFilter@7a66b955, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44eb3262, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d8155ba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@400617ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64aa19b3, org.springframework.security.web.session.SessionManagementFilter@57e2feb6, org.springframework.security.web.access.ExceptionTranslationFilter@3d815e06, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6da3b64f]
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:09 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:09 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:09 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.653 seconds (JVM running for 6.28)
+2020/03/08-00:09 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:09 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:09 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 9 ms
+2020/03/08-00:09 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:10 [http-nio-8081-exec-6] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named '_property' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.getEquipmentByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp.getEquipmentByNameLike(EquipmentServiceImp.java:39)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$FastClassBySpringCGLIB$$98ff972.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$EnhancerBySpringCGLIB$$1a1a6246.getEquipmentByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.EquipmentController.getEquipmentByNameLike(EquipmentController.java:42)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$FastClassBySpringCGLIB$$edb66c86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$EnhancerBySpringCGLIB$$36479078.getEquipmentByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named '_property' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:10 [http-nio-8081-exec-6] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named '_property' in 'class java.lang.String']
+2020/03/08-00:11 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:11 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:11 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:11 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 18336 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:11 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:11 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:11 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:11 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1536 ms
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19dfeb53, org.springframework.security.web.context.SecurityContextPersistenceFilter@62922fe1, org.springframework.security.web.header.HeaderWriterFilter@2e3b0b44, org.springframework.security.web.authentication.logout.LogoutFilter@380a2439, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@54207b0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b482ffc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20ddd8e4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2eb779e8, org.springframework.security.web.session.SessionManagementFilter@599b7b63, org.springframework.security.web.access.ExceptionTranslationFilter@3bea78cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f5f1d6d]
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:11 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:11 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:11 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.055 seconds (JVM running for 5.538)
+2020/03/08-00:11 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:11 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:11 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 9 ms
+2020/03/08-00:11 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:12 [http-nio-8081-exec-2] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'property' in 'class java.lang.String'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy77.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy88.getEquipmentByNameLike(Unknown Source)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp.getEquipmentByNameLike(EquipmentServiceImp.java:39)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$FastClassBySpringCGLIB$$98ff972.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.core.service.impl.EquipmentServiceImp$$EnhancerBySpringCGLIB$$c72e1494.getEquipmentByNameLike(<generated>)
+	at com.sportswork.sportswork.controller.admin.EquipmentController.getEquipmentByNameLike(EquipmentController.java:42)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$FastClassBySpringCGLIB$$edb66c86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
+	at com.sportswork.sportswork.controller.admin.EquipmentController$$EnhancerBySpringCGLIB$$a470bf7.getEquipmentByNameLike(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'property' in 'class java.lang.String'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 115 common frames omitted
+2020/03/08-00:12 [http-nio-8081-exec-2] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'property' in 'class java.lang.String']
+2020/03/08-00:13 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:13 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:13 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:13 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 8652 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:13 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:13 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:13 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:13 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1535 ms
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45d5e1cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@208474c0, org.springframework.security.web.header.HeaderWriterFilter@1575a373, org.springframework.security.web.authentication.logout.LogoutFilter@1392236f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@777c95bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e245dab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33fa9252, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@538f4bf4, org.springframework.security.web.session.SessionManagementFilter@147c1871, org.springframework.security.web.access.ExceptionTranslationFilter@6eab7e68, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16a1c965]
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:13 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:13 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:13 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.077 seconds (JVM running for 5.52)
+2020/03/08-00:14 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:14 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:14 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-00:14 [http-nio-8081-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:22 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:22 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:22 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 10280 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:22 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:22 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:22 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1538 ms
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17864d98, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cb2cd0b, org.springframework.security.web.header.HeaderWriterFilter@2900e226, org.springframework.security.web.authentication.logout.LogoutFilter@100885b8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2cc7d29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44a52dbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b69d0ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@626edeef, org.springframework.security.web.session.SessionManagementFilter@4281afe1, org.springframework.security.web.access.ExceptionTranslationFilter@21f90b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59e12e4b]
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:22 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:22 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.068 seconds (JVM running for 5.564)
+2020/03/08-00:22 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:22 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:22 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-00:22 [http-nio-8081-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:24 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:24 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:24 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:24 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 11976 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:24 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:24 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:24 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:24 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1496 ms
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@455ddf1c, org.springframework.security.web.context.SecurityContextPersistenceFilter@56034988, org.springframework.security.web.header.HeaderWriterFilter@68ebd574, org.springframework.security.web.authentication.logout.LogoutFilter@6f1ca896, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@567911d7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d57268c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14a72750, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c52a62f, org.springframework.security.web.session.SessionManagementFilter@1f1eaa4, org.springframework.security.web.access.ExceptionTranslationFilter@168445a1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e2e988c]
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:24 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:24 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:24 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.038 seconds (JVM running for 5.484)
+2020/03/08-00:24 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:24 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:24 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-00:24 [http-nio-8081-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:29 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:29 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:29 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:29 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 21664 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:29 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:29 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:29 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:29 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1527 ms
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60b35ae9, org.springframework.security.web.context.SecurityContextPersistenceFilter@15819570, org.springframework.security.web.header.HeaderWriterFilter@f1c27b7, org.springframework.security.web.authentication.logout.LogoutFilter@681d3822, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4754a14f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15db3daf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@602eb03c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e8c4d29, org.springframework.security.web.session.SessionManagementFilter@270ad25c, org.springframework.security.web.access.ExceptionTranslationFilter@a5f0a69, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@179ef3cf]
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:29 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:29 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:29 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.169 seconds (JVM running for 5.838)
+2020/03/08-00:29 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:29 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:29 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 11 ms
+2020/03/08-00:29 [http-nio-8081-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:34 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:34 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:34 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:35 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 19752 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:35 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:35 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:35 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:35 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1640 ms
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40d0da7, org.springframework.security.web.context.SecurityContextPersistenceFilter@543660a0, org.springframework.security.web.header.HeaderWriterFilter@a7f54b5, org.springframework.security.web.authentication.logout.LogoutFilter@14e10875, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f47b51d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6613eb81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2af20b58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d7adbcd, org.springframework.security.web.session.SessionManagementFilter@6eac2a0d, org.springframework.security.web.access.ExceptionTranslationFilter@62758e82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57337978]
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:35 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:35 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:35 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.479 seconds (JVM running for 5.869)
+2020/03/08-00:35 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:35 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:35 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-00:35 [http-nio-8081-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:36 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:36 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:36 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:36 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 224 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:36 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:36 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:36 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:36 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1528 ms
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78c251bd, org.springframework.security.web.context.SecurityContextPersistenceFilter@1417b9c6, org.springframework.security.web.header.HeaderWriterFilter@52a4287d, org.springframework.security.web.authentication.logout.LogoutFilter@7c50ef3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@60ceb1da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47d84a82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@686cc581, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16b1d916, org.springframework.security.web.session.SessionManagementFilter@61a939c2, org.springframework.security.web.access.ExceptionTranslationFilter@3fc74b01, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7df35089]
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:36 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:36 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:36 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.242 seconds (JVM running for 5.673)
+2020/03/08-00:36 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:36 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:36 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-00:36 [http-nio-8081-exec-3] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:37 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:37 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:37 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:37 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 7832 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:37 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:37 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:37 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:37 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1502 ms
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43d9149a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3687b29c, org.springframework.security.web.header.HeaderWriterFilter@51c4749a, org.springframework.security.web.authentication.logout.LogoutFilter@5e991728, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@54c351c5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32d4e03e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12025c82, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8c6957c, org.springframework.security.web.session.SessionManagementFilter@24d88bac, org.springframework.security.web.access.ExceptionTranslationFilter@3b591e8b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b5ba772]
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:37 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:37 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:37 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.014 seconds (JVM running for 5.218)
+2020/03/08-00:38 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:38 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:38 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 9 ms
+2020/03/08-00:38 [http-nio-8081-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:39 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:39 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:39 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:39 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 16064 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:39 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:39 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:39 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:39 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1532 ms
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74931894, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f62f7a9, org.springframework.security.web.header.HeaderWriterFilter@623c31d8, org.springframework.security.web.authentication.logout.LogoutFilter@ca69f57, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@49cabc71, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35d29379, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b8f4aa5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e0ce21f, org.springframework.security.web.session.SessionManagementFilter@5270a4cf, org.springframework.security.web.access.ExceptionTranslationFilter@28a18a57, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@123a5144]
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:39 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:39 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:40 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:40 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.136 seconds (JVM running for 5.509)
+2020/03/08-00:40 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:40 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:40 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-00:40 [http-nio-8081-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:41 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:41 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:41 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:41 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 9260 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:41 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:41 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:41 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:41 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1788 ms
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a23442c, org.springframework.security.web.context.SecurityContextPersistenceFilter@12fec981, org.springframework.security.web.header.HeaderWriterFilter@6a1f3862, org.springframework.security.web.authentication.logout.LogoutFilter@14b6dfb0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7193ec2a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@229af10b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61d0eb43, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55100b74, org.springframework.security.web.session.SessionManagementFilter@6786f734, org.springframework.security.web.access.ExceptionTranslationFilter@3cc6ab02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3167810f]
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:41 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:41 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:41 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.534 seconds (JVM running for 5.969)
+2020/03/08-00:41 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:41 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:41 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 10 ms
+2020/03/08-00:41 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:42 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:42 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:42 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:42 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 3240 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:42 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:42 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:42 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:42 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1613 ms
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@257b5dd6, org.springframework.security.web.context.SecurityContextPersistenceFilter@ee43c78, org.springframework.security.web.header.HeaderWriterFilter@7316e5cf, org.springframework.security.web.authentication.logout.LogoutFilter@f6ada6c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@656d0551, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4be2717b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ad5ce11, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d2f4d28, org.springframework.security.web.session.SessionManagementFilter@27135b13, org.springframework.security.web.access.ExceptionTranslationFilter@73ed2780, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d949c76]
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:42 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:42 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:42 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.168 seconds (JVM running for 5.845)
+2020/03/08-00:42 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:42 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:42 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 21 ms
+2020/03/08-00:43 [http-nio-8081-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:43 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:43 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:43 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:44 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 14972 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:44 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:44 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:44 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:44 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1474 ms
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e0fd4b7, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f4aeeb0, org.springframework.security.web.header.HeaderWriterFilter@15e569aa, org.springframework.security.web.authentication.logout.LogoutFilter@7a9bea7a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4688a6a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a7f89fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3596ceb8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70549b28, org.springframework.security.web.session.SessionManagementFilter@46b5261a, org.springframework.security.web.access.ExceptionTranslationFilter@36c45640, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fbae252]
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:44 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:44 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:44 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.053 seconds (JVM running for 5.542)
+2020/03/08-00:44 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:44 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:44 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-00:44 [http-nio-8081-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:45 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:45 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:45 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed

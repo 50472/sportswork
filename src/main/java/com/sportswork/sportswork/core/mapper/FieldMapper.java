@@ -1,5 +1,6 @@
 package com.sportswork.sportswork.core.mapper;
 
+import com.sportswork.sportswork.core.entity.Equipment;
 import com.sportswork.sportswork.core.entity.Field;
 
 import java.util.List;
@@ -12,8 +13,10 @@ import java.util.List;
 public interface FieldMapper {
     void addField(Field field);
     Field getField(String id);
+    List<Field> getFieldByNameLike(String _parameter);
     List<Field> getAllFields();
     void deleteField(String id);
     void setField(Field field);
+    void setFieldState(String id, int state);
     long getCount();
 }

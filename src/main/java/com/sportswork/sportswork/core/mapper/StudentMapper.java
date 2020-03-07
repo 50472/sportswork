@@ -13,6 +13,7 @@ public interface StudentMapper {
     void addStudent(Student student);
     Student getStudent(String id);
     List<Student> getAllStudents();
+    Student getStudentByNumber(String number);
     void deleteStudent(String id);
     void setStudent(Student student);
     long getCount();

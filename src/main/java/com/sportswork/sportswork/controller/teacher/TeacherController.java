@@ -1,13 +1,19 @@
 package com.sportswork.sportswork.controller.teacher;
 
 import com.sportswork.sportswork.core.entity.Teacher;
+import com.sportswork.sportswork.core.entity.Teaching;
 import com.sportswork.sportswork.core.entity.User;
+import com.sportswork.sportswork.core.service.dto.PageDTO;
 import com.sportswork.sportswork.core.service.impl.TeacherServiceImp;
 import com.sportswork.sportswork.core.service.impl.UserServiceImp;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
@@ -16,7 +22,8 @@ import javax.annotation.Resource;
  * @date 2020/2/27 23:44
  * @description
  */
-@RequestMapping("/teacher")
+@Slf4j
+@Controller("t_teacherController")
 public class TeacherController {
     @Resource
     private UserServiceImp userServiceImp;
@@ -24,14 +31,21 @@ public class TeacherController {
     @Resource
     private TeacherServiceImp teacherServiceImp;
 
-    @RequestMapping({"/details"})
-    public String details(Model model) {
+
+    @RequestMapping({"/teacher/details"})
+    @PreAuthorize("hasAnyRole('teacher')")
+    public String details() {
+        return "pages/view/teacher/details";
+    }
+
+    @RequestMapping("/teacher/details/getTeacher")
+    @PreAuthorize("hasAnyRole('teacher')")
+    @ResponseBody
+    public Object getTeacher() {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getPrincipal();
         User user = userServiceImp.getUser(userDetails.getUsername());
-        Teacher teacher = teacherServiceImp.getTeacher(user.getRoleId());
-        model.addAttribute("teacher", teacher);
-        return "pages/view/teacher/details";
+        return teacherServiceImp.getTeacher(user.getRoleId());
     }
 }

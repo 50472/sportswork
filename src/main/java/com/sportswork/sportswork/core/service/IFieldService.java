@@ -12,6 +12,7 @@ import java.util.List;
 public interface IFieldService {
     void addField(Field field);
     Field getField(String id);
+    List<Field> getFieldByNameLike(String name);
     List<Field> getAllFields();
     void deleteField(String id);
     void setField(Field field);

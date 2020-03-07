@@ -51,6 +51,18 @@
         WHERE id = #{id}
     </select>
 
+    <!--通过学号获取学生信息-->
+    <select id="getStudentByNumber" resultType="Student">
+        SELECT
+            id,
+            name,
+            sex,
+            number,
+            profession
+        FROM student
+        WHERE number = #{number}
+    </select>
+
     <!--获取学生数量-->
     <select id="getCount" resultType="long">
         SELECT COUNT(1)

@@ -25,6 +25,14 @@
         WHERE id = #{id}
     </update>
 
+    <!--设置器材借出数量-->
+    <update id="setEquipmentLend" parameterType="Equipment">
+        UPDATE equipment
+        SET
+            lend = #{lend}
+        WHERE id = #{id}
+    </update>
+
     <!--获取所有器材-->
     <resultMap id="selectEquipments" type="Equipment"/>
     <select id="getAllEquipments" resultMap="selectEquipments">
@@ -46,6 +54,20 @@
             lend
         FROM equipment
         WHERE id = #{id}
+    </select>
+
+    <!--通过器材名模糊获取器材信息-->
+    <select id="getEquipmentByNameLike" resultType="Equipment" parameterType="String">
+        SELECT
+            id,
+            name,
+            count,
+            lend
+        FROM equipment
+        WHERE 1=1
+        <if test='_parameter!=""'>
+            AND name like "%"#{_parameter}"%"
+        </if>
     </select>
 
     <!--获取器材数量-->

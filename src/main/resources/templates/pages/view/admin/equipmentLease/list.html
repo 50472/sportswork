@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="hg-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="/hg-layui-admin-ui/css/font.css">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/admin/admin.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollbar.css">
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollBar.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/admin.js"></script>
+    <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body class="layui-body-content">
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <i class="iconfont">&#xe6ac;</i>器材租借数据表
+                <span class="layui-layout-right">
+                    <a href="javascript:;" hg-event="fullscreen">
+                        <i class="layui-icon layui-icon-screen-full"></i>
+                    </a>
+                </span>
+            </div>
+
+            <div class="layui-card-body">
+                <div class="layui-form">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <input type="text" name="equipmentName" placeholder="请输入器材名" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-inline">
+                            <input type="text" name="studentName" placeholder="请输入学生学号" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn layui-btn-lg layui-btn-normal" lay-submit lay-filter="sreach"><i
+                                    class="layui-icon layui-icon-lg">&#xe615;</i></button>
+                        </div>
+                    </div>
+                </div>
+                <table class="layui-hide" id="test" lay-filter="test"></table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //修改
+    function edit(obj) {
+        //obj通过行tool修改-lay-event
+        var row = obj ? obj : hg.table.datatable('test', 'getSelected');
+        if (row) {
+            hg.open('编辑授课' + row.data.name, '/admin/equipmentLease/edit.html?id='+
+                row.data.id + '&number=' + row.data.number
+                , 600, 400);
+        } else {
+            hg.msg('请选中一行数据，再操作！');
+        }
+    }
+    //删除
+    function del(obj) {
+        //obj通过行tool删除-lay-event
+        var row = obj ? obj : hg.table.datatable('test', 'getSelected');
+        if (row) {
+            hg.confirm("删除当前选中的器材租借记录，确定要删除吗？", function () {
+                //row.del(); //只删本地数据
+                var id = row.data.id;
+                $.ajax({
+                    type:"POST",
+                    url:"delete",
+                    data:{"id":id},
+                    dataType:"json",
+                    success:function (data) {
+                        if(data === true){//删除成功：移除删除行
+                            hg.msg('删除成功！');
+                            hg.table.datatable('test', 'reload');
+                        }else{//删除失败
+                            hg.msg('删除失败！');
+                        };
+                    },
+                    error: function (data,type, err) {
+                        console.log("ajax错误类型："+type);
+                        console.log(err);
+                        hg.msg('删除失败！');
+                    }
+                });
+            });
+        } else {
+            hg.msg('请选中一行数据，再操作！');
+        }
+    }
+    //归还
+    function returnEquipment(obj) {
+        //obj通过行tool修改-lay-event
+        var row = obj ? obj : hg.table.datatable('test', 'getSelected');
+        if (row) {
+            if(row.data.state == 1)
+                return alert("器材已归还");
+            var id = row.data.id;
+            $.ajax({
+                type:"POST",
+                url:"returnEquipment",
+                data:{"equipmentLeaseId":id},
+                dataType:"json",
+                success:function (data) {
+                    if(data === true){//归还成功：刷新
+                        hg.msg('归还成功！');
+                        hg.table.datatable('test', 'reload');
+                    }else{//删除失败
+                        hg.msg('归还失败！');
+                    };
+                },
+                error: function (data,type, err) {
+                    console.log("ajax错误类型："+type);
+                    console.log(err);
+                    hg.msg('归还失败！');
+                }
+            });
+        } else {
+            hg.msg('请选中一行数据，再操作！');
+        }
+    }
+    //监听switch操作事件
+    hg.form.onswitch('doflag',function(data){
+        hg.msg(data.elem.name+'开关checked：'+(data.elem.checked===true?'正在授课':'停止授课'));
+        var state = 1;
+        if(data.elem.checked===true)state = 0;
+        var equipmentLease = {'id' : data.elem.name,'state' : state};
+        var equipmentLeaseStr = JSON.stringify(equipmentLease);
+        console.log("数据2"+equipmentLeaseStr);
+        $.ajax({
+            type:"POST",
+            url:"stop",
+            data: equipmentLeaseStr,
+            dataType:'json',
+            contentType: "application/json;charset=UTF-8",
+            success:function (data) {
+                if(data === true){//操作成功
+                    hg.msg('操作成功！');
+                }else{//操作失败
+                    hg.msg('操作失败！');
+                };
+            },
+            error: function (data,type, err) {
+                console.log("ajax错误类型："+type);
+                console.log(err);
+                hg.msg('操作失败！');
+            }
+        });
+    });
+    //监听表单提交事件
+    hg.form.onsubmit('sreach', function (data) {
+        table = hg.table.datatable('test', '器材租借信息管理', 'getEquipmentLeasesByEquipmentOrStudent', data, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+    });
+    var tableCols = [
+        [{
+            equipment: 'equipmentName',
+            width: '10%',
+            title: '器材名',
+            minWidth: 100,
+            sort: true,
+            templet: function (d) {
+                return d.equipment.name
+            }
+        }, {
+            equipment: 'studentName',
+            width: '10%',
+            title: '租借学生',
+            minWidth: 100,
+            templet: function (d) {
+                return d.student.name
+            }
+        }, {
+            equipment: 'studentNumber',
+            width: '10%',
+            title: '学号',
+            minWidth: 100,
+            templet: function (d) {
+                return d.student.number
+            }
+        }, {
+            equipment: 'number',
+            width: '7%',
+            title: '借用数量',
+            minWidth: 100,
+            templet: function (d) {
+                return d.number
+            }
+        }, {
+            equipment: 'borrowTimeDate',
+            width: '15%',
+            title: '借出时间',
+            minWidth: 100,
+            templet: function (d) {
+                return d.borrowTimeDate
+            }
+        }, {
+            equipment: 'lendingTimeDate',
+            width: '10%',
+            title: '借用时间',
+            minWidth: 100,
+            templet: function (d) {
+                return d.lendingTimeDate
+            }
+        }, {
+            equipment: 'returnTimeDate',
+            width: '15%',
+            title: '归还时间',
+            templet: function (d) {
+                return d.returnTimeDate
+            }
+        }, {
+            equipment: 'state',
+            width: '8%',
+            title: '是否归还',
+            sort: true,
+            templet: function (d) {
+                return d.state == 0 ?'未归还':'已归还';
+            }
+        }, {
+            equipment: 'right',
+            width: '15%',
+            title: '操作',
+            templet: function (d) {
+                return '<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>' +
+                    ' <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>' +
+                    (d.state == 0 ?' <a class="layui-btn layui-btn-xs" lay-event="returnEquipment">归还器材</a>':'');
+            }
+        }]
+    ];
+    var toolbar = [
+        {
+            text: '修改',
+            layuiicon: '&#xe642;',
+            handler: function (obj, row) {
+                if (row) {
+                    hg.open('编辑授课' + row.data.name, '/admin/equipmentLease/edit.html?id='+
+                        row.data.id + "&number=" +row.data.number
+                        , 600, 400);
+                } else {
+                    hg.msg('请选中一行数据，再操作！');
+                }
+            }
+        }, {
+            text: '删除',
+            layuiicon: '&#xe640;',
+            handler: function (obj, row) {
+                if (row) {
+                    hg.confirm("删除当前选中的授课，确定要删除吗？", function () {
+                        //row.del(); //只删本地数据
+                        var id = row.data.id;
+                        $.ajax({
+                            type: "POST",
+                            url: "delete",
+                            data: {"id": id},
+                            dataType: "json",
+                            success: function (data) {
+                                if (data === true) {//删除成功：移除删除行
+                                    hg.msg('删除成功！');
+                                    hg.table.datatable('test', 'reload');
+                                } else {//删除失败
+                                    hg.msg('删除失败！');
+                                }
+                            },
+                            error: function (data, type, err) {
+                                console.log("ajax错误类型：" + type);
+                                console.log(err);
+                                hg.msg('删除失败！');
+                            }
+                        });
+                    });
+                } else {
+                    hg.msg('请选中一行数据，再操作！');
+                }
+            }
+        }
+    ];
+    //基本数据表格
+    var table = hg.table.datatable('test', '器材租借信息管理', 'getAllEquipmentLeases', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+
+</script>
+
+</html>

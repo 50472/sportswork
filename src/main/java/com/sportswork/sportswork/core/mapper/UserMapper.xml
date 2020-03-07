@@ -73,11 +73,12 @@
         <result property="username" column="username"/>
         <result property="password" column="password"/>
         <result property="phone" column="phone"/>
+        <result property="roleId" column="u_role_id"/>
         <result property="registerTime" column="register_time"/>
         <result property="isDel" column="is_del"/>
 
         <collection property="roleList" ofType="Role">
-            <id column="id" property="id"/>
+            <id column="r_id" property="id"/>
             <result column="name" property="name"/>
             <result column="description" property="description"/>
         </collection>
@@ -93,8 +94,8 @@
             user.phone,
             user.register_time,
             user.is_del,
-            user.role_id,
-            role.id,
+            user.role_id u_role_id,
+            role.id r_id,
             role.name,
             role.description
         FROM user
@@ -114,8 +115,8 @@
             user.phone,
             user.register_time,
             user.is_del,
-            user.role_id,
-            role.id,
+            user.role_id u_role_id,
+            role.id r_id,
             role.name,
             role.description
         FROM user
@@ -134,8 +135,8 @@
             user.phone,
             user.register_time,
             user.is_del,
-            user.role_id,
-            role.id,
+            user.role_id u_role_id,
+            role.id r_id,
             role.name,
             role.description
         FROM user
@@ -154,8 +155,8 @@
             user.phone,
             user.register_time,
             user.is_del,
-            user.role_id,
-            role.id,
+            user.role_id u_role_id,
+            role.id r_id,
             role.name,
             role.description
         FROM user

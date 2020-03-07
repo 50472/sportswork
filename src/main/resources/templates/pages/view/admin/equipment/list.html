@@ -34,6 +34,17 @@
                 </span>
             </div>
             <div class="layui-card-body">
+                <div class="layui-form">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <input type="text" name="name" placeholder="请输入器材名" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn layui-btn-lg layui-btn-normal" lay-submit lay-filter="sreach"><i
+                                    class="layui-icon layui-icon-lg">&#xe615;</i></button>
+                        </div>
+                    </div>
+                </div>
                 <table class="layui-hide" id="test" lay-filter="test"></table>
             </div>
         </div>
@@ -85,21 +96,23 @@
             hg.msg('请选中一行数据，再操作！');
         }
     }
+    //借用
+    function addLease(obj) {
+        //obj通过行tool修改-lay-event
+        var row = obj ? obj : hg.table.datatable('test', 'getSelected');
+        if (row) {
+            if(row.data.count - row.data.lend <= 0)
+                return alert("器材没用足够的器材借用");
+            hg.open('借用器材' + row.data.name, '/admin/equipment/addLease.html?id='+
+                row.data.id + '&surplus=' + (row.data.count -row.data.lend)
+                , 600, 400);
+        } else {
+            hg.msg('请选中一行数据，再操作！');
+        }
+    }
     //监听表单提交事件
     hg.form.onsubmit('sreach', function (data) {
-        var start = data.start;
-        var end = data.end;
-        if (start && end) {
-            if (start > end) {
-                hg.msg("时间范围错误，请重新选择!");
-                return false;
-            }
-        } else if (start || end) {
-            hg.msg("时间范围错误，请重新选择!");
-            return false;
-        }
-        hg.msg(JSON.stringify(data));
-        table && table.reload(data);
+        table = hg.table.datatable('test', '场地租借信息管理', 'getEquipmentByNameLike', data, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
     });
     var tableCols = [
         [{
@@ -125,7 +138,9 @@
             width: '20%',
             title: '操作',
             templet: function (d) {
-                return '<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a> <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>'
+                return '<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>' +
+                    ' <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>' +
+                    ' <a class="layui-btn layui-btn-xs" lay-event="addLease">借用</a>'
             }
         }]
     ];

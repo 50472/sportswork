@@ -75,7 +75,7 @@
         //obj通过行tool删除-lay-event
         var row = obj ? obj : hg.table.datatable('test', 'getSelected');
         if (row) {
-            hg.confirm("删除当前选中的授课，确定要删除吗？", function () {
+            hg.confirm("删除当前选中的选课记录，确定要删除吗？", function () {
                 //row.del(); //只删本地数据
                 var id = row.data.id;
                 $.ajax({
@@ -229,7 +229,7 @@
         }
     ];
     //基本数据表格
-    var table = hg.table.datatable('test', '授课信息管理', 'getAllElectives', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+    var table = hg.table.datatable('test', '选课信息管理', 'getAllElectives', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
 
 </script>
 

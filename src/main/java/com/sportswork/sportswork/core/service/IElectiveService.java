@@ -19,4 +19,6 @@ public interface IElectiveService {
             String studentName, String teacherName, String courseName);
     void deleteElective(String id);
     Elective setElective(Elective elective);
+    void studentElective(String teachingId, String studentId);
+    void teacherScoring(String electiveId, String score);
 }
