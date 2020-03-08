@@ -51,6 +51,20 @@ public class HomeController {
         }
     }
 
+    @RequestMapping({"/details"})
+    public String details() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal();
+        User user = userServiceImp.getUserByUsername(userDetails.getUsername());
+        if(user.getRoleCode().equals("ROLE_teacher")) {
+            return "redirect:/teacher/details";
+        } else if(user.getRoleCode().equals("ROLE_student")){
+            return "redirect:/student/details";
+        }
+        return "pages/view/home";
+    }
+
     @RequestMapping({"/home"})
     public String home() {
         return "pages/view/home";

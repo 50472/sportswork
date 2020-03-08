@@ -1278,3 +1278,441 @@ Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter 
 2020/03/08-00:45 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
 2020/03/08-00:45 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
 2020/03/08-00:45 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-00:47 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 12748 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-00:47 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-00:47 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-00:47 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-00:47 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1740 ms
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c5d3379, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c73b200, org.springframework.security.web.header.HeaderWriterFilter@74a8592e, org.springframework.security.web.authentication.logout.LogoutFilter@45d7c535, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@74f60dbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58f3a0c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@513cf787, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ed4298e, org.springframework.security.web.session.SessionManagementFilter@4c5fcd36, org.springframework.security.web.access.ExceptionTranslationFilter@48208571, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b2a6389]
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:47 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-00:47 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-00:47 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.724 seconds (JVM running for 6.597)
+2020/03/08-00:47 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-00:47 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-00:47 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-00:47 [http-nio-8081-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-00:48 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-00:48 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-00:48 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-12:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 2176 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-12:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-12:27 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-12:27 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-12:27 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1419 ms
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3578e1d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@f0dd86, org.springframework.security.web.header.HeaderWriterFilter@9ef014c, org.springframework.security.web.authentication.logout.LogoutFilter@246f640c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6641082e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3307b80, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@428293f4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30d234be, org.springframework.security.web.session.SessionManagementFilter@4a256758, org.springframework.security.web.access.ExceptionTranslationFilter@232eae4b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32f73c5d]
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-12:27 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-12:27 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-12:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.755 seconds (JVM running for 6.78)
+2020/03/08-17:49 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-17:49 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-17:49 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-17:49 [http-nio-8081-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:22 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:22 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:22 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 19344 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:22 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:22 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:22 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 2305 ms
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b9b4df4, org.springframework.security.web.context.SecurityContextPersistenceFilter@59481a4, org.springframework.security.web.header.HeaderWriterFilter@139fed91, org.springframework.security.web.authentication.logout.LogoutFilter@1a0836b6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a07d458, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a269b18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1afbbacf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41ef91, org.springframework.security.web.session.SessionManagementFilter@1e5d8a9a, org.springframework.security.web.access.ExceptionTranslationFilter@4bc8dff4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@573f2ec1]
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:22 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:22 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:22 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 5.125 seconds (JVM running for 6.811)
+2020/03/08-19:23 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:23 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:23 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 11 ms
+2020/03/08-19:23 [http-nio-8081-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:24 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:24 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:24 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:24 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 10112 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:24 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:24 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:24 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:25 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:25 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:25 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1790 ms
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65bffa00, org.springframework.security.web.context.SecurityContextPersistenceFilter@68eadceb, org.springframework.security.web.header.HeaderWriterFilter@75920fbc, org.springframework.security.web.authentication.logout.LogoutFilter@1e2765c5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@318f250e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f3b8823, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14950f59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56ae4989, org.springframework.security.web.session.SessionManagementFilter@74142b09, org.springframework.security.web.access.ExceptionTranslationFilter@3de69700, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ff3b88b]
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:25 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:25 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:25 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.585 seconds (JVM running for 6.247)
+2020/03/08-19:25 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:25 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:25 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-19:25 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:25 [http-nio-8081-exec-8] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+java.lang.NullPointerException: null
+	at com.sportswork.sportswork.controller.HomeController.details(HomeController.java:60)
+	at com.sportswork.sportswork.controller.HomeController$$FastClassBySpringCGLIB$$7cd8d6e0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.sportswork.sportswork.controller.HomeController$$EnhancerBySpringCGLIB$$9acb92db.details(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020/03/08-19:25 [http-nio-8081-exec-8] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [java.lang.NullPointerException]
+2020/03/08-19:27 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:27 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:27 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 18540 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:27 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:27 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:27 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1581 ms
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55e596bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@36853fdc, org.springframework.security.web.header.HeaderWriterFilter@4011ca85, org.springframework.security.web.authentication.logout.LogoutFilter@1145987a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4da13ab0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5664d724, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32ec5571, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ca14748, org.springframework.security.web.session.SessionManagementFilter@3665f5f, org.springframework.security.web.access.ExceptionTranslationFilter@4d195045, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@70109e2e]
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:27 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:27 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:27 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.962 seconds (JVM running for 5.198)
+2020/03/08-19:27 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:27 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:27 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 6 ms
+2020/03/08-19:27 [http-nio-8081-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:28 [http-nio-8081-exec-4] ERROR com.sportswork.sportswork.config.GlobalDefaultExceptionHandler: msg:
+java.lang.NullPointerException: null
+	at com.sportswork.sportswork.controller.HomeController.details(HomeController.java:60)
+	at com.sportswork.sportswork.controller.HomeController$$FastClassBySpringCGLIB$$7cd8d6e0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:685)
+	at com.sportswork.sportswork.controller.HomeController$$EnhancerBySpringCGLIB$$687ef45.details(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020/03/08-19:28 [http-nio-8081-exec-4] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: Resolved [java.lang.NullPointerException]
+2020/03/08-19:31 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:31 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:31 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:31 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 2080 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:31 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:31 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:31 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:31 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1545 ms
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67023715, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e34fd50, org.springframework.security.web.header.HeaderWriterFilter@21f6cd6f, org.springframework.security.web.authentication.logout.LogoutFilter@370167e2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@cbdfe68, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6456a836, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@617661ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bea132c, org.springframework.security.web.session.SessionManagementFilter@383a4104, org.springframework.security.web.access.ExceptionTranslationFilter@7ef1bc71, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4536fde8]
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:31 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:31 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:31 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.994 seconds (JVM running for 5.649)
+2020/03/08-19:32 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:32 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:32 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-19:32 [http-nio-8081-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:52 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:52 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:52 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:52 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 2676 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:52 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:52 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:52 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:52 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1692 ms
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bfd7cf6, org.springframework.security.web.context.SecurityContextPersistenceFilter@55afbd7a, org.springframework.security.web.header.HeaderWriterFilter@5f676f79, org.springframework.security.web.authentication.logout.LogoutFilter@7c0e74e7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@197ff588, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1de18cfc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45855a58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21e645b6, org.springframework.security.web.session.SessionManagementFilter@549cd2f6, org.springframework.security.web.access.ExceptionTranslationFilter@59b386f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@390cc4ea]
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:52 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:52 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:52 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.224 seconds (JVM running for 5.768)
+2020/03/08-19:52 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:52 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:52 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 6 ms
+2020/03/08-19:52 [http-nio-8081-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:54 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:54 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:54 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:54 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 3448 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:54 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:54 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:54 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:54 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1469 ms
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ba58a57, org.springframework.security.web.context.SecurityContextPersistenceFilter@2486829f, org.springframework.security.web.header.HeaderWriterFilter@255eeb69, org.springframework.security.web.authentication.logout.LogoutFilter@5614991b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b5c3efe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@176a4131, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2febe049, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4dfeb4e9, org.springframework.security.web.session.SessionManagementFilter@412876a0, org.springframework.security.web.access.ExceptionTranslationFilter@3c4e3187, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@155eadd3]
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:54 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:54 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:54 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.928 seconds (JVM running for 5.26)
+2020/03/08-19:54 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:54 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:54 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 6 ms
+2020/03/08-19:54 [http-nio-8081-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:57 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:57 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:57 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:57 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 7852 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:57 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:57 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:57 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:58 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:58 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:58 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1626 ms
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28978548, org.springframework.security.web.context.SecurityContextPersistenceFilter@2439c7db, org.springframework.security.web.header.HeaderWriterFilter@1226abed, org.springframework.security.web.authentication.logout.LogoutFilter@45047495, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@71ebe3c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@328df575, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d65f952, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71b1ce9c, org.springframework.security.web.session.SessionManagementFilter@34083cbf, org.springframework.security.web.access.ExceptionTranslationFilter@674a1f31, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4caf7bb9]
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:58 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:58 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:58 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 4.24 seconds (JVM running for 5.794)
+2020/03/08-19:58 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:58 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:58 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 8 ms
+2020/03/08-19:58 [http-nio-8081-exec-7] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-19:59 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-19:59 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:59 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-19:59 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 13168 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-19:59 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-19:59 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-19:59 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-19:59 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1993 ms
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2aa6a20a, org.springframework.security.web.context.SecurityContextPersistenceFilter@60f79e1a, org.springframework.security.web.header.HeaderWriterFilter@39ac7ca9, org.springframework.security.web.authentication.logout.LogoutFilter@3b762a44, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@df98a1e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2286744d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54fe4864, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d7876a4, org.springframework.security.web.session.SessionManagementFilter@346474f2, org.springframework.security.web.access.ExceptionTranslationFilter@16d0cd44, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50967ccc]
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-19:59 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-19:59 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-19:59 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 5.028 seconds (JVM running for 8.608)
+2020/03/08-19:59 [http-nio-8081-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-19:59 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-19:59 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 10 ms
+2020/03/08-19:59 [http-nio-8081-exec-9] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited
+2020/03/08-20:00 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Shutting down ExecutorService 'taskScheduler'
+2020/03/08-20:00 [SpringContextShutdownHook] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Shutting down ExecutorService 'applicationTaskExecutor'
+2020/03/08-20:00 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} closed
+2020/03/08-20:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Starting SportsworkApplication on LAPTOP-19J49U6B with PID 15448 (E:\BiYeSheJi_project_lixidong\sportswork\target\classes started by 50472 in E:\BiYeSheJi_project_lixidong\sportswork)
+2020/03/08-20:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: No active profile set, falling back to default profiles: default
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8081 (http)
+2020/03/08-20:00 [restartedMain] INFO  org.apache.catalina.core.StandardService: Starting service [Tomcat]
+2020/03/08-20:00 [restartedMain] INFO  org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020/03/08-20:00 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.web.context.ContextLoader: Root WebApplicationContext: initialization completed in 1502 ms
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.security.web.DefaultSecurityFilterChain: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d3b8e89, org.springframework.security.web.context.SecurityContextPersistenceFilter@71cbd257, org.springframework.security.web.header.HeaderWriterFilter@2a7d3366, org.springframework.security.web.authentication.logout.LogoutFilter@4c6c5465, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19d13005, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eb69b91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64965a52, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64b5ba5a, org.springframework.security.web.session.SessionManagementFilter@4391abd, org.springframework.security.web.access.ExceptionTranslationFilter@1236ef5f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@687daa54]
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020/03/08-20:00 [restartedMain] WARN  org.thymeleaf.templatemode.TemplateMode: [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler: Initializing ExecutorService 'taskScheduler'
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020/03/08-20:00 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8081 (http) with context path ''
+2020/03/08-20:00 [restartedMain] INFO  com.sportswork.sportswork.SportsworkApplication: Started SportsworkApplication in 3.994 seconds (JVM running for 5.533)
+2020/03/08-20:00 [http-nio-8081-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020/03/08-20:00 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020/03/08-20:00 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet: Completed initialization in 7 ms
+2020/03/08-20:00 [http-nio-8081-exec-10] INFO  com.alibaba.druid.pool.DruidDataSource: {dataSource-1} inited

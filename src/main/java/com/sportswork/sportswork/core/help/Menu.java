@@ -38,26 +38,4 @@ public class Menu implements Serializable {
     public void addChildren(Menu menu){
         children.add(menu);
     }
-
-//    public String toString(){
-//        StringBuilder code = new StringBuilder();
-//        if(id == null){
-//            code.append("[");
-//        } else{
-//            code.append("{")
-//                    .append("name:").append(name).append(",")
-//                    .append("level:").append(level).append(",")
-//                    .append("url:").append(url).append(",")
-//                    .append("order:").append(order).append(",")
-//                    .append("children:[");
-//        }
-//        for(Menu menu : children){
-//            code.append(menu.toString());
-//        }
-//        code.append("]");
-//        if(id != null){
-//            code.append("}");
-//        }
-//        return code.toString();
-//    }
 }
