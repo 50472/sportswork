@@ -29,6 +29,10 @@ public class UserServiceImp implements IUserService {
     private RoleMapper roleMapper;
     @Resource
     private UserRoleMapper userRoleMapper;
+    @Resource
+    private StudentMapper studentMapper;
+    @Resource
+    private TeacherMapper teacherMapper;
 
     @Override
     public boolean addUser(UserDTO userDTO) {
@@ -135,6 +139,19 @@ public class UserServiceImp implements IUserService {
         userMapper.setPhone(user);
     }
 
-
-
+    @Override
+    public void addUserRole(User user) {
+        if(user.getRoleId() == null){
+            if(user.getRoleCode().startsWith("ROLE_student")){
+                Student student = new Student();
+                studentMapper.addStudent(student);
+                user.setRoleId(student.getId());
+            }
+            if(user.getRoleCode().startsWith("ROLE_teacher")){
+                Teacher teacher = new Teacher();
+                teacherMapper.addTeacher(teacher);
+                user.setRoleId(teacher.getId());
+            }
+        }
+    }
 }

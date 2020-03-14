@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="hg-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="/hg-layui-admin-ui/css/font.css">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/admin/admin.css" media="all">
+    <link rel="stylesheet" href="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollbar.css">
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/Scrollbar/jquery.scrollBar.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/layui/layui.js"></script>
+    <script type="text/javascript" src="/hg-layui-admin-ui/lib/admin/admin.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="layui-body-content">
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <i class="iconfont">&#xe6ac;</i>场地数据表
+            <span class="layui-layout-right">
+                    <a href="javascript:;" hg-event="fullscreen">
+                        <i class="layui-icon layui-icon-screen-full"></i>
+                    </a>
+                </span>
+        </div>
+        <div class="layui-card-body">
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <input type="text" name="name" placeholder="请输入场地名" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-inline layui-show-xs-block">
+                        <button class="layui-btn layui-btn-lg layui-btn-normal" lay-submit lay-filter="sreach"><i
+                                class="layui-icon layui-icon-lg">&#xe615;</i></button>
+                    </div>
+                </div>
+            </div>
+            <table class="layui-hide" id="test" lay-filter="test"></table>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    //监听表单提交事件
+    hg.form.onsubmit('sreach', function (data) {
+        table = hg.table.datatable('test', '场地租借信息管理', 'getFieldByNameLike', data, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+    });
+    var tableCols = [
+        [{
+            field: 'name',
+            width: '15%',
+            title: '场地名',
+            minWidth: 100,
+            style: 'color: #ff5722;',
+            sort: true
+        }, {
+            field: 'state',
+            width: '30%',
+            title: '状态',
+            minWidth: 100,
+            templet: function (d) {
+                return d.state == 0 ?'未被使用':'正在使用';
+            }
+        }]
+    ];
+    var toolbar = [
+    ];
+    //基本数据表格
+    var table = hg.table.datatable('test', '场地表', 'getAllFields', {}, tableCols, toolbar, true, 'full-210', ['filter', 'print', 'exports']);
+
+</script>
+
+</html>

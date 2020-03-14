@@ -11,7 +11,7 @@
  Target Server Version : 80015
  File Encoding         : 65001
 
- Date: 05/03/2020 00:27:15
+ Date: 14/03/2020 21:23:34
 */
 
 SET NAMES utf8mb4;
@@ -32,25 +32,25 @@ CREATE TABLE `course`  (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
-INSERT INTO `course` VALUES ('1', '1大学英语', '1', '1');
-INSERT INTO `course` VALUES ('10', '10大学英语', '2', '10');
-INSERT INTO `course` VALUES ('11', '11大学英语', '412', '11');
-INSERT INTO `course` VALUES ('12', '12大学英语', '4342', '12');
-INSERT INTO `course` VALUES ('13', '13大学英语', '1324', '13');
-INSERT INTO `course` VALUES ('14', '14大学英语', '1432', '14');
-INSERT INTO `course` VALUES ('15', '15大学英语', '4214', '15');
-INSERT INTO `course` VALUES ('16', '16大学英语', '4324', '16');
-INSERT INTO `course` VALUES ('17', '17大学英语', '4321', '17');
-INSERT INTO `course` VALUES ('18', '18大学英语', 'test1', '18');
-INSERT INTO `course` VALUES ('19', '19大学英语', 'cccccc', '19');
-INSERT INTO `course` VALUES ('2', '2大学英语', '11', '2');
-INSERT INTO `course` VALUES ('3', '3大学英语', '111', '3');
-INSERT INTO `course` VALUES ('4', '4大学英语', '12', '4');
-INSERT INTO `course` VALUES ('5', '5大学英语', '142', '5');
-INSERT INTO `course` VALUES ('6', '6大学英语', '432', '6');
-INSERT INTO `course` VALUES ('7', '7大学英语', '43214', '7');
-INSERT INTO `course` VALUES ('8', '8大学英语', '4214', '8');
-INSERT INTO `course` VALUES ('9', '9大学英语', '2142', '9');
+INSERT INTO `course` VALUES ('1', '游泳课', '40', '0001');
+INSERT INTO `course` VALUES ('10', '篮球课', '40', '0002');
+INSERT INTO `course` VALUES ('11', '登山跑', '40', '0003');
+INSERT INTO `course` VALUES ('12', '骑行', '40', '0004');
+INSERT INTO `course` VALUES ('13', '足球课', '40', '0005');
+INSERT INTO `course` VALUES ('14', '网球课', '40', '0006');
+INSERT INTO `course` VALUES ('15', '乒乓球课', '40', '0007');
+INSERT INTO `course` VALUES ('16', '排球课', '40', '0008');
+INSERT INTO `course` VALUES ('17', '投掷类课程', '40', '0009');
+INSERT INTO `course` VALUES ('18', '田径类课程', '40', '0010');
+INSERT INTO `course` VALUES ('19', '健身理论课', '40', '0011');
+INSERT INTO `course` VALUES ('2', '人体研究', '40', '0012');
+INSERT INTO `course` VALUES ('3', '体能训练课', '40', '0013');
+INSERT INTO `course` VALUES ('4', '力量训练课', '40', '0014');
+INSERT INTO `course` VALUES ('5', '技巧训练课', '40', '0015');
+INSERT INTO `course` VALUES ('6', '羽毛球课', '40', '0016');
+INSERT INTO `course` VALUES ('7', '太极课', '40', '0017');
+INSERT INTO `course` VALUES ('8', '拳击课', '40', '0018');
+INSERT INTO `course` VALUES ('9', '女子防身术', '40', '0019');
 
 -- ----------------------------
 -- Table structure for elective
@@ -61,9 +61,10 @@ CREATE TABLE `elective`  (
   `student_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `teaching_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `score` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`student_id`, `teaching_id`) USING BTREE,
+  PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id`(`id`) USING BTREE,
   INDEX `teaching_id`(`teaching_id`) USING BTREE,
+  INDEX `student_id`(`student_id`) USING BTREE,
   CONSTRAINT `student_id` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `teaching_id` FOREIGN KEY (`teaching_id`) REFERENCES `teaching` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
@@ -71,8 +72,10 @@ CREATE TABLE `elective`  (
 -- ----------------------------
 -- Records of elective
 -- ----------------------------
-INSERT INTO `elective` VALUES ('232', '231', '1', '99');
-INSERT INTO `elective` VALUES ('231', '231', '2', '50');
+INSERT INTO `elective` VALUES ('d9f90e86608811eab33154e1ad23325a', '231', '1', NULL);
+INSERT INTO `elective` VALUES ('e47dc87c608811eab33154e1ad23325a', '231', '2', '50');
+INSERT INTO `elective` VALUES ('e58912b1608611eab33154e1ad23325a', '231', 'e4ca75965e1711eab33154e1ad23325a', NULL);
+INSERT INTO `elective` VALUES ('fdfa53d8608511eab33154e1ad23325a', '231', '3', NULL);
 
 -- ----------------------------
 -- Table structure for equipment
@@ -88,7 +91,8 @@ CREATE TABLE `equipment`  (
 -- ----------------------------
 -- Records of equipment
 -- ----------------------------
-INSERT INTO `equipment` VALUES ('1', '1', 3, 1);
+INSERT INTO `equipment` VALUES ('1', '乒乓球拍', 5, 0);
+INSERT INTO `equipment` VALUES ('2', '篮球', 5, 0);
 
 -- ----------------------------
 -- Table structure for equipment_lease
@@ -98,17 +102,20 @@ CREATE TABLE `equipment_lease`  (
   `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `student_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `equipment_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `borrow_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `lending_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `return_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `number` int(16) NULL DEFAULT NULL,
+  `borrow_time` bigint(255) NULL DEFAULT NULL,
+  `return_time` bigint(255) NULL DEFAULT NULL,
+  `state` int(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of equipment_lease
 -- ----------------------------
-INSERT INTO `equipment_lease` VALUES ('1', '1', '1', '1', '1', '1', '1');
+INSERT INTO `equipment_lease` VALUES ('02011cbc605611eab33154e1ad23325a', '1', '1', 4, 1583573307962, 1583574462224, 1);
+INSERT INTO `equipment_lease` VALUES ('1', '1', '1', 1, 1583127245335, 1583574476508, 1);
+INSERT INTO `equipment_lease` VALUES ('18c4dd4f605911eab33154e1ad23325a', '1', '1', 4, 1583574634649, 1583574703323, 1);
+INSERT INTO `equipment_lease` VALUES ('2', '2', '2', 2, 1583127245335, 1583127233335, 1);
 
 -- ----------------------------
 -- Table structure for field
@@ -124,7 +131,8 @@ CREATE TABLE `field`  (
 -- ----------------------------
 -- Records of field
 -- ----------------------------
-INSERT INTO `field` VALUES ('1', 'd', '1');
+INSERT INTO `field` VALUES ('1', '9号篮球场', '0');
+INSERT INTO `field` VALUES ('2', '3号号网球场', '0');
 
 -- ----------------------------
 -- Table structure for field_lease
@@ -134,15 +142,23 @@ CREATE TABLE `field_lease`  (
   `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `student_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `field_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `borrow_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `lending_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `borrow_time` bigint(255) NULL DEFAULT NULL,
+  `lending_time` double(16, 8) NULL DEFAULT NULL,
+  `expire` int(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of field_lease
 -- ----------------------------
-INSERT INTO `field_lease` VALUES ('1', '1', '1', '1', '1');
+INSERT INTO `field_lease` VALUES ('1', '1', '1', 1583127245335, 1.00000000, 1);
+INSERT INTO `field_lease` VALUES ('2', '2', '2', 1583127245335, 2.00000000, 1);
+INSERT INTO `field_lease` VALUES ('36a155bb604911eab33154e1ad23325a', '1', '1', 1583567812802, 2.00000000, 1);
+INSERT INTO `field_lease` VALUES ('6c6327ca604d11eab33154e1ad23325a', '1', '1', 1583569620979, 0.00000000, 1);
+INSERT INTO `field_lease` VALUES ('99d83c66604c11eab33154e1ad23325a', '1', '2', 1583569267745, 0.00000000, 1);
+INSERT INTO `field_lease` VALUES ('99e44d7b604f11eab33154e1ad23325a', '2', '2', 1583570556307, 0.01000000, 1);
+INSERT INTO `field_lease` VALUES ('bdc2c7f4604e11eab33154e1ad23325a', '1', '1', 1583570186997, 0.01000000, 1);
+INSERT INTO `field_lease` VALUES ('e2cd4a7c605011eab33154e1ad23325a', '231', '1', 1583571108135, 0.01000000, 1);
 
 -- ----------------------------
 -- Table structure for game
@@ -159,7 +175,7 @@ CREATE TABLE `game`  (
 -- ----------------------------
 -- Records of game
 -- ----------------------------
-INSERT INTO `game` VALUES ('1', '1', '1', '1');
+INSERT INTO `game` VALUES ('1', '2020年校运会男子2000米', '2020-04-11', '1号田径场');
 
 -- ----------------------------
 -- Table structure for game_enroll
@@ -199,7 +215,7 @@ CREATE TABLE `menu`  (
 INSERT INTO `menu` VALUES ('1', '用户信息管理', '0', 1, 'javascript;', 1, '');
 INSERT INTO `menu` VALUES ('10', '授课管理', '2', 2, 'admin/teaching/list', 2, NULL);
 INSERT INTO `menu` VALUES ('11', '场地管理', '3', 2, 'javascript;', 1, NULL);
-INSERT INTO `menu` VALUES ('12', '器材管理', '3', 2, 'admin/equipment/list', 2, NULL);
+INSERT INTO `menu` VALUES ('12', '器材管理', '3', 2, 'javascript;', 2, NULL);
 INSERT INTO `menu` VALUES ('13', '体测管理', '4', 2, 'admin/sportsTest/list', 1, NULL);
 INSERT INTO `menu` VALUES ('14', '比赛管理', '4', 2, 'admin/game/list', 2, NULL);
 INSERT INTO `menu` VALUES ('15', '场地列表', '11', 3, 'admin/field/list', 1, NULL);
@@ -216,6 +232,19 @@ INSERT INTO `menu` VALUES ('6', '账户管理', '1', 2, 'admin/user/list', 1, NU
 INSERT INTO `menu` VALUES ('7', '学生管理', '1', 2, 'admin/student/list', 2, NULL);
 INSERT INTO `menu` VALUES ('8', '教师管理', '1', 2, 'admin/teacher/list', 3, NULL);
 INSERT INTO `menu` VALUES ('9', '课程表', '2', 2, 'admin/course/list', 1, NULL);
+INSERT INTO `menu` VALUES ('e_a1', '场地管理', '0', 1, 'javascript;', 1, NULL);
+INSERT INTO `menu` VALUES ('e_a2', '器材管理', '0', 1, 'javascript;', 2, NULL);
+INSERT INTO `menu` VALUES ('e_a3', '场地租借', 'e_a1', 2, 'equipment_admin/field/list', 1, NULL);
+INSERT INTO `menu` VALUES ('e_a4', '场地租借记录', 'e_a1', 2, 'equipment_admin/fieldLease/list', 2, NULL);
+INSERT INTO `menu` VALUES ('e_a5', '器材出租', 'e_a2', 2, 'equipment_admin/equipment/list', 1, NULL);
+INSERT INTO `menu` VALUES ('e_a6', '器材归还', 'e_a2', 2, 'equipment_admin/equipmentLease/list', 2, NULL);
+INSERT INTO `menu` VALUES ('s_1', '选课管理', '0', 1, 'javascript;', 1, NULL);
+INSERT INTO `menu` VALUES ('s_2', '课程列表', 's_1', 2, 'student/teaching/teachingList', 1, NULL);
+INSERT INTO `menu` VALUES ('s_3', '已选课程', 's_1', 2, 'student/elective/electiveList', 2, NULL);
+INSERT INTO `menu` VALUES ('s_4', '场地信息', 's_1', 2, 'student/equipment/list', 3, NULL);
+INSERT INTO `menu` VALUES ('s_5', '器材信息', 's_1', 2, 'student/field/list', 4, NULL);
+INSERT INTO `menu` VALUES ('t_1', '授课管理', '0', 1, 'javascript;', 1, NULL);
+INSERT INTO `menu` VALUES ('t_2', '我的授课', 't_1', 2, 'teacher/teaching/teachingList', 1, NULL);
 
 -- ----------------------------
 -- Table structure for role
@@ -263,7 +292,20 @@ INSERT INTO `role_menu` VALUES ('17', '1', '17');
 INSERT INTO `role_menu` VALUES ('18', '1', '18');
 INSERT INTO `role_menu` VALUES ('19', '1', '19');
 INSERT INTO `role_menu` VALUES ('2', '1', '2');
+INSERT INTO `role_menu` VALUES ('20', '5', 'e_a1');
+INSERT INTO `role_menu` VALUES ('21', '5', 'e_a2');
+INSERT INTO `role_menu` VALUES ('22', '5', 'e_a3');
+INSERT INTO `role_menu` VALUES ('23', '5', 'e_a4');
+INSERT INTO `role_menu` VALUES ('24', '5', 'e_a5');
+INSERT INTO `role_menu` VALUES ('25', '5', 'e_a6');
+INSERT INTO `role_menu` VALUES ('26', '3', 's_1');
+INSERT INTO `role_menu` VALUES ('27', '3', 's_2');
+INSERT INTO `role_menu` VALUES ('28', '3', 's_3');
+INSERT INTO `role_menu` VALUES ('29', '4', 't_1');
 INSERT INTO `role_menu` VALUES ('3', '1', '3');
+INSERT INTO `role_menu` VALUES ('30', '4', 't_2');
+INSERT INTO `role_menu` VALUES ('31', '3', 's_4');
+INSERT INTO `role_menu` VALUES ('32', '3', 's_5');
 INSERT INTO `role_menu` VALUES ('4', '1', '4');
 INSERT INTO `role_menu` VALUES ('5', '1', '5');
 INSERT INTO `role_menu` VALUES ('6', '1', '6');
@@ -285,7 +327,7 @@ CREATE TABLE `sports_test`  (
 -- ----------------------------
 -- Records of sports_test
 -- ----------------------------
-INSERT INTO `sports_test` VALUES ('1', '1', '1');
+INSERT INTO `sports_test` VALUES ('1', '2016级学生2020年2400米跑步测试', '12分钟优秀，13分钟及格');
 
 -- ----------------------------
 -- Table structure for student
@@ -303,11 +345,12 @@ CREATE TABLE `student`  (
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('231', '李喜东', '男,女', '1246464', 'ccccc');
-INSERT INTO `student` VALUES ('232', 'fd', '男', '3542145641', 'aaaaa');
-INSERT INTO `student` VALUES ('8af7f1365d4a11eab33154e1ad23325a', 'fsdfa', '男', '21132546', 'agdsgfsdf');
-INSERT INTO `student` VALUES ('aea15f7e5d4a11eab33154e1ad23325a', '灵魂健身杨老师', '男', '16545323131', '体育');
-INSERT INTO `student` VALUES ('cff9e0ab5d4d11eab33154e1ad23325a', 'dsafafdsaf', '男', '14532134', 'adsgdas');
+INSERT INTO `student` VALUES ('1', '杨小怪', '男', '010001', '美术');
+INSERT INTO `student` VALUES ('2', '李四喜', '男', '020001', '体育');
+INSERT INTO `student` VALUES ('231', '李喜东', '男', '030001', '计算机');
+INSERT INTO `student` VALUES ('232', '张狗蛋', '男', '040001', '机械工程');
+INSERT INTO `student` VALUES ('8af7f1365d4a11eab33154e1ad23325a', '王老五', '男', '040001', '机械工程');
+INSERT INTO `student` VALUES ('cff9e0ab5d4d11eab33154e1ad23325a', '凤傲天', '女', '050001', '文史学院');
 
 -- ----------------------------
 -- Table structure for teacher
@@ -324,9 +367,9 @@ CREATE TABLE `teacher`  (
 -- ----------------------------
 -- Records of teacher
 -- ----------------------------
-INSERT INTO `teacher` VALUES ('1', '1张一', '男', '1');
-INSERT INTO `teacher` VALUES ('2', '2张二', '男', '2');
-INSERT INTO `teacher` VALUES ('3', '3张三', '女', '3');
+INSERT INTO `teacher` VALUES ('1', '灵魂教练杨老师', '男', '0001');
+INSERT INTO `teacher` VALUES ('2', '小苍老师', '女', '0002');
+INSERT INTO `teacher` VALUES ('3', '波老师', '女', '0003');
 
 -- ----------------------------
 -- Table structure for teaching
@@ -348,10 +391,10 @@ CREATE TABLE `teaching`  (
 -- ----------------------------
 -- Records of teaching
 -- ----------------------------
-INSERT INTO `teaching` VALUES ('1', '3', '1', 'cc', 0);
-INSERT INTO `teaching` VALUES ('2', '1', '8', 'dfs', 0);
-INSERT INTO `teaching` VALUES ('3', '1', '3', '1111111', 1);
-INSERT INTO `teaching` VALUES ('e4ca75965e1711eab33154e1ad23325a', '2', '2', '22222', 0);
+INSERT INTO `teaching` VALUES ('1', '3', '1', '2019前半年', 0);
+INSERT INTO `teaching` VALUES ('2', '1', '8', '2019后半年', 0);
+INSERT INTO `teaching` VALUES ('3', '1', '3', '2018后半年', 1);
+INSERT INTO `teaching` VALUES ('e4ca75965e1711eab33154e1ad23325a', '2', '2', '2018前半年', 0);
 
 -- ----------------------------
 -- Table structure for test_record
@@ -369,7 +412,7 @@ CREATE TABLE `test_record`  (
 -- ----------------------------
 -- Records of test_record
 -- ----------------------------
-INSERT INTO `test_record` VALUES ('1', '1', '1', '1', '1');
+INSERT INTO `test_record` VALUES ('1', '1', '1', '85', '2019前半年');
 
 -- ----------------------------
 -- Table structure for user
@@ -391,24 +434,25 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '1', '1', '1', '1', 1, 0, '231');
-INSERT INTO `user` VALUES ('15680b3a5c4811eab33154e1ad23325a', NULL, '4444444', '4444444', '4444444', 0, 1583127523046, NULL);
-INSERT INTO `user` VALUES ('227cafc25c4811eab33154e1ad23325a', NULL, '5555555', '5555555', '5555555', 0, 1583127544993, NULL);
-INSERT INTO `user` VALUES ('3', '3', '3', '3', '3', 0, 0, '231');
-INSERT INTO `user` VALUES ('3488180b5c4711eab33154e1ad23325a', NULL, '222222222', '222222222', '222222222', 0, 1583127145769, NULL);
-INSERT INTO `user` VALUES ('6fe0afdf5c4711eab33154e1ad23325a', NULL, '3333333', '3333333', '3333333', 0, 1583127245335, NULL);
-INSERT INTO `user` VALUES ('77e6d7665a2e11eab41754e1ad23325a', NULL, '5', '5', '5', 0, 1582896621473, NULL);
-INSERT INTO `user` VALUES ('83ba75d55c4a11eab33154e1ad23325a', NULL, '9999999', '9999999', '9999999', 1, 1583128567129, NULL);
-INSERT INTO `user` VALUES ('85cb79455d1d11eab33154e1ad23325a', NULL, 'kkkkkkkkkkk', 'kkkkkkkkkkk', 'kkkkkkkkkkk', 1, 1583219194390, NULL);
-INSERT INTO `user` VALUES ('8b69be525c4511eab33154e1ad23325a', NULL, '123456', '123456', '123456', 0, 1583126426183, NULL);
-INSERT INTO `user` VALUES ('ae4d520c5c4611eab33154e1ad23325a', NULL, '1111111111', '1111111111', '1111111111', 0, 1583126920569, NULL);
-INSERT INTO `user` VALUES ('ae5216585d1a11eab33154e1ad23325a', NULL, 'roleCode', 'roleCode', 'roleCode', 0, 1583217973891, NULL);
-INSERT INTO `user` VALUES ('af1ed2f85d1e11eab33154e1ad23325a', NULL, 'ppppppppp', 'ppppppppp', 'ppppppppp', 1, 1583219693219, NULL);
-INSERT INTO `user` VALUES ('b499fd565c4811eab33154e1ad23325a', NULL, '6666666', '6666666', '6666666', 0, 1583127790132, NULL);
-INSERT INTO `user` VALUES ('bc33b1d95c8111eab33154e1ad23325a', NULL, 'tttttttttttttt', 'cccccccccccccc', 'tttttttttttttt', 0, 1583152284188, NULL);
-INSERT INTO `user` VALUES ('c2477c4e5c4511eab33154e1ad23325a', NULL, '1234567', '1234567', '1234567', 0, 1583126524589, NULL);
-INSERT INTO `user` VALUES ('fccf1a025a2d11eab41754e1ad23325a', NULL, '4', '4', '4', 0, 1582896414958, NULL);
-INSERT INTO `user` VALUES ('root', 'root', 'root', 'root', 'root', 0, 0, '');
+INSERT INTO `user` VALUES ('1', '1', 'student', 'student', '18673515332', 0, 0, '231');
+INSERT INTO `user` VALUES ('15680b3a5c4811eab33154e1ad23325a', NULL, '4444444', '4444444', '18673515333', 0, 1583127523046, NULL);
+INSERT INTO `user` VALUES ('227cafc25c4811eab33154e1ad23325a', NULL, '5555555', '5555555', '18673515432', 0, 1583127544993, NULL);
+INSERT INTO `user` VALUES ('3', '3', 'teacher', 'teacher', '18673515332', 0, 0, '1');
+INSERT INTO `user` VALUES ('3488180b5c4711eab33154e1ad23325a', NULL, '222222222', '222222222', '18673515332', 0, 1583127145769, NULL);
+INSERT INTO `user` VALUES ('6fe0afdf5c4711eab33154e1ad23325a', NULL, '3333333', '3333333', '18673515332', 0, 1583127245335, NULL);
+INSERT INTO `user` VALUES ('77e6d7665a2e11eab41754e1ad23325a', NULL, '5', '5', '18673515332', 0, 1582896621473, NULL);
+INSERT INTO `user` VALUES ('83ba75d55c4a11eab33154e1ad23325a', NULL, '9999999', '9999999', '18673515332', 1, 1583128567129, NULL);
+INSERT INTO `user` VALUES ('85cb79455d1d11eab33154e1ad23325a', NULL, 'kkkkkkkkkkk', 'kkkkkkkkkkk', '18673515332', 1, 1583219194390, NULL);
+INSERT INTO `user` VALUES ('8b69be525c4511eab33154e1ad23325a', NULL, '123456', '123456', '18673515332', 0, 1583126426183, NULL);
+INSERT INTO `user` VALUES ('ae4d520c5c4611eab33154e1ad23325a', NULL, '1111111111', '1111111111', '18673515332', 0, 1583126920569, NULL);
+INSERT INTO `user` VALUES ('ae5216585d1a11eab33154e1ad23325a', NULL, 'roleCode', 'roleCode', '18673515332', 0, 1583217973891, NULL);
+INSERT INTO `user` VALUES ('af1ed2f85d1e11eab33154e1ad23325a', NULL, 'ppppppppp', 'ppppppppp', '18673515332', 1, 1583219693219, NULL);
+INSERT INTO `user` VALUES ('b499fd565c4811eab33154e1ad23325a', NULL, '6666666', '6666666', '18673515332', 0, 1583127790132, NULL);
+INSERT INTO `user` VALUES ('bc33b1d95c8111eab33154e1ad23325a', NULL, 'tttttttttttttt', 'cccccccccccccc', '18673515332', 0, 1583152284188, NULL);
+INSERT INTO `user` VALUES ('c2477c4e5c4511eab33154e1ad23325a', NULL, '1234567', '1234567', '18673515332', 0, 1583126524589, NULL);
+INSERT INTO `user` VALUES ('equipment_admin', 'equipment_admin', 'equipment_admin', 'equipment_admin', '18673515332', 0, 0, NULL);
+INSERT INTO `user` VALUES ('fccf1a025a2d11eab41754e1ad23325a', NULL, '4', '4', '18673515332', 0, 1582896414958, NULL);
+INSERT INTO `user` VALUES ('root', 'root', 'root', 'root', '18673515332', 0, 0, '');
 
 -- ----------------------------
 -- Table structure for user_role
@@ -428,8 +472,10 @@ INSERT INTO `user_role` VALUES ('1', 'root', '1');
 INSERT INTO `user_role` VALUES ('2', '1', '3');
 INSERT INTO `user_role` VALUES ('3', '3', '4');
 INSERT INTO `user_role` VALUES ('38b1750f5df411eab33154e1ad23325a', 'ae5216585d1a11eab33154e1ad23325a', '1');
+INSERT INTO `user_role` VALUES ('4', 'equipment_admin', '5');
 INSERT INTO `user_role` VALUES ('77e7e4ba5a2e11eab41754e1ad23325a', '77e6d7665a2e11eab41754e1ad23325a', '2');
 INSERT INTO `user_role` VALUES ('85cdc2285d1d11eab33154e1ad23325a', '85cb79455d1d11eab33154e1ad23325a', '4');
+INSERT INTO `user_role` VALUES ('b8082f8665e811eabb1754e1ad23325a', 'b8075c9465e811eabb1754e1ad23325a', '3');
 INSERT INTO `user_role` VALUES ('be356c1b5d3211eab33154e1ad23325a', 'af1ed2f85d1e11eab33154e1ad23325a', '1');
 INSERT INTO `user_role` VALUES ('fcd0422d5a2d11eab41754e1ad23325a', 'fccf1a025a2d11eab41754e1ad23325a', '2');
 

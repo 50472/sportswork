@@ -34,6 +34,7 @@ public class SecurityAuthenticationProvider implements AuthenticationProvider {
         if(!user.getIsDelBoolean()){
             throw new IllegalArgumentException("改用户已被禁用");
         }
+        userServiceImp.addUserRole(user);
         SecurityUserInfo userInfo = new SecurityUserInfo(user, true,true, true);
 
         Collection<? extends GrantedAuthority> authorities = userInfo.getAuthorities();

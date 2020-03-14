@@ -27,4 +27,6 @@ public interface IUserService {
     void setUsername(User user);
     void setPassword(User user);
     void setPhone(User user);
+
+    void addUserRole(User user);
 }
