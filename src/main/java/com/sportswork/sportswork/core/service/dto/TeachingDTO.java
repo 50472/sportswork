@@ -19,5 +19,7 @@ public class TeachingDTO {
     private String teacherNumber;
     private String courseNumber;
     private String semester;
+    private int week;
+    private int timeArrange;
     private int state;
 }

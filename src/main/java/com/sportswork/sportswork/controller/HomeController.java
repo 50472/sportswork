@@ -8,12 +8,15 @@ package com.sportswork.sportswork.controller;
 
 import com.sportswork.sportswork.config.SecurityUserInfo;
 import com.sportswork.sportswork.core.entity.Role;
+import com.sportswork.sportswork.core.entity.Teaching;
 import com.sportswork.sportswork.core.entity.User;
 import com.sportswork.sportswork.core.help.Menu;
 import com.sportswork.sportswork.core.mapper.RoleMapper;
+import com.sportswork.sportswork.core.service.dto.PageDTO;
 import com.sportswork.sportswork.core.service.dto.UserDTO;
 import com.sportswork.sportswork.core.service.impl.MenuServiceImp;
 import com.sportswork.sportswork.core.service.impl.RoleServiceImp;
+import com.sportswork.sportswork.core.service.impl.TeachingServiceImp;
 import com.sportswork.sportswork.core.service.impl.UserServiceImp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -25,11 +28,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -40,7 +48,7 @@ public class HomeController {
     @Resource
     private MenuServiceImp menuServiceImp;
     @Resource
-    private RoleServiceImp roleServiceImp;
+    private TeachingServiceImp teachingServiceImp;
 
     @RequestMapping({"/", "/index"})
     public String index(HttpServletRequest httpServletRequest,Model model) {
@@ -125,6 +133,35 @@ public class HomeController {
             menuList.addAll(menuServiceImp.getFirstLevelMenusByRoleName(roleName));
         }
         return menuList;
+    }
+
+    @RequestMapping("/getTimeAxes")
+    @ResponseBody
+    public Object getTimeAxes(String timeDate) {
+        int week = getWeek(timeDate);
+        return new PageDTO<Teaching>().toPageDTO(
+                teachingServiceImp.getTeachingsByWeek(week));
+    }
+
+    /**
+     * 1-7表示 星期日至星期六
+     * @param dates
+     * @return
+     */
+    public int getWeek(String dates)
+    {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        Date d=null;
+        try {
+            d=f.parse(dates);
+        } catch (ParseException e) {
+
+            e.printStackTrace();
+        }
+        cal.setTime(d);
+        int w=cal.get(Calendar.DAY_OF_WEEK)-1;
+        return w+1;
     }
 }
 

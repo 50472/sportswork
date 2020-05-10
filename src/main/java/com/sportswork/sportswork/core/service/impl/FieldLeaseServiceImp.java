@@ -1,6 +1,8 @@
 package com.sportswork.sportswork.core.service.impl;
 
+import com.sportswork.sportswork.core.entity.Field;
 import com.sportswork.sportswork.core.entity.FieldLease;
+import com.sportswork.sportswork.core.entity.TimeAxis;
 import com.sportswork.sportswork.core.mapper.FieldLeaseMapper;
 import com.sportswork.sportswork.core.mapper.FieldMapper;
 import com.sportswork.sportswork.core.mapper.StudentMapper;
@@ -44,12 +46,19 @@ public class FieldLeaseServiceImp implements IFieldLeaseService {
         fieldLeaseMapper.addFieldLease(fieldLease);
         fieldMapper.setFieldState(fieldLeaseDTO.getFieldId(), 1);
 
-        MyTimerTask timerTask = new MyTimerTask().setFieldLease(fieldLease.setExpire(1))
-                .setFieldId(fieldLeaseDTO.getFieldId())
-                .setFieldLeaseMapper(fieldLeaseMapper)
-                .setFieldMapper(fieldMapper);
-        Timer timer = new Timer();
-        timer.schedule(timerTask,fieldLease.lendingToTimeStamp());         //第二参数为多少时间后（1000为1秒）
+//        MyTimerTask timerTask = new MyTimerTask().setFieldLease(fieldLease.setExpire(1))
+//                .setFieldId(fieldLeaseDTO.getFieldId())
+//                .setFieldLeaseMapper(fieldLeaseMapper)
+//                .setFieldMapper(fieldMapper);
+//        Timer timer = new Timer();
+//        timer.schedule(timerTask,fieldLease.lendingToTimeStamp());         //第二参数为多少时间后（1000为1秒）
+
+        Long endTime = time + fieldLease.lendingToTimeStamp();
+        TimeAxis timeAxis = new TimeAxis().setStartTime(time)
+                                          .setEndTime(endTime)
+                                          .setFieldId(fieldLeaseDTO.getFieldId())
+                                          .setFieldLeaseId(fieldLease.getId());
+        fieldMapper.addTimeAxis(timeAxis);
     }
 
     @Override
@@ -59,12 +68,29 @@ public class FieldLeaseServiceImp implements IFieldLeaseService {
 
     @Override
     public List<FieldLease> getFieldLeaseByFieldNameLikeOrStudentNumber(String fieldName, String studentNumber) {
-        return fieldLeaseMapper.getFieldLeaseByFieldNameLikeOrStudentNumber(fieldName, studentNumber);
+        List<FieldLease> fieldLeaseList =
+                fieldLeaseMapper.getFieldLeaseByFieldNameLikeOrStudentNumber(fieldName, studentNumber);
+        return getExpire(fieldLeaseList);
     }
 
     @Override
     public List<FieldLease> getAllFieldLeases() {
-        return fieldLeaseMapper.getAllFieldLeases();
+        List<FieldLease> fieldLeaseList = fieldLeaseMapper.getAllFieldLeases();
+        return getExpire(fieldLeaseList);
+    }
+
+    private List<FieldLease> getExpire(List<FieldLease> fieldLeaseList){
+        Long time = System.currentTimeMillis();
+        for(FieldLease fieldLease : fieldLeaseList){
+            if(time >= fieldLease.getBorrowTime() && time <= fieldLease.getExpirationTime()){
+                fieldLease.setExpire(0);
+            }else if(time > fieldLease.getExpirationTime()){
+                fieldLease.setExpire(1);
+            }else if(time < fieldLease.getBorrowTime()){
+                fieldLease.setExpire(2);
+            }
+        }
+        return fieldLeaseList;
     }
 
     @Override

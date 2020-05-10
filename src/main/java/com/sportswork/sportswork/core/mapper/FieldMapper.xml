@@ -31,34 +31,58 @@
         WHERE id = #{id}
     </update>
 
+    <!-- 一对多关联查询 -->
+    <resultMap id="fieldMap" type="Field">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="state" column="state"/>
+
+        <collection property="timeAxes" ofType="TimeAxis">
+            <id column="t_id" property="id"/>
+            <result column="start_time" property="startTime"/>
+            <result column="end_time" property="endTime"/>
+        </collection>
+    </resultMap>
+
     <!--获取所有场地-->
-    <resultMap id="selectFields" type="Field"/>
-    <select id="getAllFields" resultMap="selectFields">
+    <select id="getAllFields" resultMap="fieldMap">
         SELECT
-            id,
-            name,
-            state
+            field.id,
+            field.name,
+            field.state,
+            time_axis.id t_id,
+            time_axis.start_time,
+            time_axis.end_time
         FROM field
-        ORDER BY (id + 0) ASC
+            LEFT OUTER JOIN time_axis ON field.id = time_axis.field_id
+        ORDER BY (field.id + 0) ASC
     </select>
 
     <!--获取场地信息-->
-    <select id="getField" resultType="Field">
+    <select id="getField" resultMap="fieldMap">
         SELECT
-            id,
-            name,
-            state
+            field.id,
+            field.name,
+            field.state,
+            time_axis.id t_id,
+            time_axis.start_time,
+            time_axis.end_time
         FROM field
-        WHERE id = #{id}
+            LEFT OUTER JOIN time_axis ON field.id = time_axis.field_id
+        WHERE field.id = #{id}
     </select>
 
     <!--通过名字获取场地信息-->
-    <select id="getFieldByNameLike" resultType="Field" parameterType="String">
+    <select id="getFieldByNameLike" resultMap="fieldMap" parameterType="String">
         SELECT
-            id,
-            name,
-            state
+        field.id,
+        field.name,
+        field.state,
+        time_axis.id t_id,
+        time_axis.start_time,
+        time_axis.end_time
         FROM field
+        LEFT OUTER JOIN time_axis ON field.id = time_axis.field_id
         WHERE 1=1
         <if test='_parameter!=""'>
             AND name like "%"#{_parameter}"%"
@@ -70,4 +94,13 @@
         SELECT COUNT(1)
         FROM field
     </select>
+
+    <!--添加时间轴-->
+    <insert id="addTimeAxis" useGeneratedKeys="true" keyProperty="id" parameterType="TimeAxis">
+        <selectKey keyProperty="id" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+        INSERT INTO time_axis (id, start_time, end_time, field_id, field_lease_id)
+        VALUES (#{id}, #{startTime}, #{endTime}, #{fieldId}, #{fieldLeaseId})
+    </insert>
 </mapper>

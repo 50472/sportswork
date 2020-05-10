@@ -127,10 +127,9 @@
         table && table.reload(data);
     });
     //日期控件
-    hg.datetime('#start', '#end', {
+    hg.datetime('#end', {
         type: 'datetime',
-        value: hg.getdate('datetime', -30),
-        value2: hg.getdate('datetime', '23:59:59'),
+        value: hg.getdate('datetime', '23:59:59'),
         min: hg.getdate('date', -365),
         max: hg.getdate(),
     });

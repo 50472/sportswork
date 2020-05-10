@@ -56,6 +56,11 @@ public class TeachingServiceImp implements ITeachingService {
     }
 
     @Override
+    public List<Teaching> getTeachingsByWeek(int week) {
+        return teachingMapper.getTeachingsByWeek(week);
+    }
+
+    @Override
     public List<Teaching> getTeachingsBySemester(String semester) {
         return teachingMapper.getTeachingsBySemester(semester);
     }
@@ -81,6 +86,8 @@ public class TeachingServiceImp implements ITeachingService {
                 .setId(teachingDTO.getId())
                 .setState(teachingDTO.getState())
                 .setSemester(teachingDTO.getSemester())
+                .setWeek(teachingDTO.getWeek())
+                .setTimeArrange(teachingDTO.getTimeArrange())
                 .setTeacherId(teacherMapper.getTeacherByNumber(teachingDTO.getTeacherNumber()).getId())
                 .setCourseId(courseMapper.getCourseByNumber(teachingDTO.getCourseNumber()).getId());
         teachingMapper.setTeaching(teaching);

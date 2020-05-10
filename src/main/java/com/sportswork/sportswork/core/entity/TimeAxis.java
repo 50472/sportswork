@@ -6,23 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.util.List;
-
 /**
  * @author dengwei
- * @date 2020/1/9 13:29
+ * @date 2020/5/10 11:21
  * @description
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Field extends BaseEntity {
-    public String getId(){
-        return this.id;
-    }
-
-    private String name;
-    private String state;
-    private List<TimeAxis> timeAxes;
+public class TimeAxis extends BaseEntity {
+    private Long startTime;
+    private Long endTime;
+    private String fieldId;
+    private String fieldLeaseId;
 }

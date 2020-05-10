@@ -62,7 +62,8 @@
         if (row) {
             hg.open('编辑授课' + row.data.name, '/admin/teaching/edit.html?id='+
                 row.data.id + '&teacherNumber=' + row.data.teacher.number + '&courseNumber=' + row.data.course.number +
-                '&semester=' + row.data.semester + '&state=' + row.data.state
+                '&semester=' + row.data.semester + '&week=' + row.data.week +
+                '&timeArrange=' + row.data.timeArrange + '&state=' + row.data.state
                 , 600, 400);
         } else {
             hg.msg('请选中一行数据，再操作！');
@@ -158,12 +159,37 @@
             }
         }, {
             field: 'semester',
-            width: '30%',
+            width: '15%',
             title: '学期',
             minWidth: 100
         }, {
+            field: 'week',
+            width: '10%',
+            title: '星期',
+            minWidth: 100,
+            templet: function (d) {
+                if(d.week == 1) {return '星期日';}
+                else if(d.week == 2) {return '星期一'}
+                else if(d.week == 3) {return '星期二'}
+                else if(d.week == 4) {return '星期三'}
+                else if(d.week == 5) {return '星期四'}
+                else if(d.week == 6) {return '星期五'}
+                else if(d.week == 7) {return '星期六'}
+            }
+        }, {
+            field: 'timeArrange',
+            width: '10%',
+            title: '时间安排',
+            minWidth: 100,
+            templet: function (d) {
+                if(d.timeArrange == 1) {return '一二节';}
+                else if(d.timeArrange == 2) {return '三四节'}
+                else if(d.timeArrange == 3) {return '五六节'}
+                else if(d.timeArrange == 4) {return '七八节'}
+            }
+        }, {
             field: 'wealth',
-            width: '15%',
+            width: '10%',
             title: '详情',
             templet: function (d) {
                 return '<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="depts">查看</a>'
@@ -198,7 +224,7 @@
             layuiicon: '&#xe642;',
             handler: function (obj, row) {
                 if (row) {
-                    hg.open('编辑授课' + row.data.name, '/admin/teaching/edit.html?id='+
+                    hg.open('编辑授课', '/admin/teaching/edit.html?id='+
                         row.data.id + '&teacherNumber=' + row.data.teacher.number + '&courseNumber=' + row.data.course.number +
                         '&semester=' + row.data.semester + '&state=' + row.data.state
                         , 600, 400);

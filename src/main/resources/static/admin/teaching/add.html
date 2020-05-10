@@ -50,6 +50,20 @@
                                class="layui-input"></div>
                 </div>
                 <div class="layui-form-item">
+                    <label for="week" class="layui-form-label">
+                        星期</label>
+                    <div class="layui-input-inline">
+                        <div id="week" ></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="timeArrange" class="layui-form-label">
+                        时间安排</label>
+                    <div class="layui-input-inline">
+                        <div id="timeArrange" ></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label for="state" class="layui-form-label">
                         授课状况</label>
                     <div class="layui-input-inline">
@@ -76,8 +90,12 @@
                 //监听提交
                 form.on('submit(add)',
                     function (data) {
+                        var selected1 = xmSelect.get('#week', true);
+                        var selected2 = xmSelect.get('#timeArrange', true);
                         //发异步，把数据提交给php
                         var teaching = data.field;
+                        teaching.week = selected1.getValue('valueStr');
+                        teaching.timeArrange = selected2.getValue('valueStr');
                         $.ajax({
                             type:"POST",
                             url:"add",
@@ -112,6 +130,36 @@
                         });
                         return false;
                     });
+
+                //选框加载
+                var select = xmSelect.render({
+                    // 这里绑定css选择器
+                    el: '#week',
+                    radio: true,            //单选
+                    // 渲染的数据
+                    data: [
+                        {name: '星期日', value: '1'},
+                        {name: '星期一', value: '2'},
+                        {name: '星期二', value: '3'},
+                        {name: '星期三', value: '4'},
+                        {name: '星期四', value: '5'},
+                        {name: '星期五', value: '6'},
+                        {name: '星期六', value: '7'}
+                    ],
+                });
+
+                var select2 = xmSelect.render({
+                    // 这里绑定css选择器
+                    el: '#timeArrange',
+                    radio: true,            //单选
+                    // 渲染的数据
+                    data: [
+                        {name: '一二节', value: '1'},
+                        {name: '三四节', value: '2'},
+                        {name: '五六节', value: '3'},
+                        {name: '七八节', value: '4'}
+                    ],
+                });
             });
     </script>
 </body>

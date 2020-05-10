@@ -49,6 +49,8 @@ public class UserServiceImp implements IUserService {
                 .setRoleId(role.getId())
                 .setUserId(user.getId());
         userRoleMapper.addUserRole(userRole);
+        user = userMapper.getUser(user.getId());
+        addUserRole(user);    //绑定学生教师id
         return true;
     }
 
@@ -144,11 +146,13 @@ public class UserServiceImp implements IUserService {
         if(user.getRoleId() == null){
             if(user.getRoleCode().startsWith("ROLE_student")){
                 Student student = new Student();
+                student.setNumber(user.getUsername());
                 studentMapper.addStudent(student);
                 user.setRoleId(student.getId());
             }
             if(user.getRoleCode().startsWith("ROLE_teacher")){
                 Teacher teacher = new Teacher();
+                teacher.setNumber(teacher.getNumber());
                 teacherMapper.addTeacher(teacher);
                 user.setRoleId(teacher.getId());
             }

@@ -16,6 +16,7 @@ public interface ITeachingService {
     Teaching getTeaching(String id);
     List<Teaching> getAllTeachings();
     List<Teaching> getTeachingsByTeacher(String teacherId);
+    List<Teaching> getTeachingsByWeek(int week);
     List<Teaching> getTeachingsBySemester(String semester);
     List<Teaching> getTeachingsByCourse(String courseId);
     List<Teaching> getTeachingsByCourseOrTeacher(String courseName, String teacherName);

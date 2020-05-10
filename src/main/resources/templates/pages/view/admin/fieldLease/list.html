@@ -151,7 +151,9 @@
             title: '是否到期',
             sort: true,
             templet: function (d) {
-                return d.expire == 0 ?'未到期':'已到期';
+                if(d.expire == 0) {return '未到期';}
+                else if(d.expire == 1) {return '已到期'}
+                else if(d.expire == 2) {return '等待授课'}
             }
         }, {
             field: 'right',

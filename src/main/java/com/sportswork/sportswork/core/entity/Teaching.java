@@ -31,6 +31,9 @@ public class Teaching extends BaseEntity {
     private Course course;
     private String semester;
     private int state;
+    private int week;   //星期
+    private int timeArrange;   //节课时间安排
+    private Field field;   //安排场地
 
     public boolean getStateBoolean(){
         return state == 0;

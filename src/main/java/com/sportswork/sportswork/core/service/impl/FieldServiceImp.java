@@ -1,6 +1,7 @@
 package com.sportswork.sportswork.core.service.impl;
 
 import com.sportswork.sportswork.core.entity.Field;
+import com.sportswork.sportswork.core.entity.TimeAxis;
 import com.sportswork.sportswork.core.mapper.FieldMapper;
 import com.sportswork.sportswork.core.service.IFieldService;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +41,27 @@ public class FieldServiceImp implements IFieldService {
 
     @Override
     public List<Field> getAllFields() {
-        return fieldMapper.getAllFields();
+        List<Field> fieldList = fieldMapper.getAllFields();
+        return getState(fieldList);
+    }
+
+    private List<Field> getState(List<Field> fieldList){
+        Long time = System.currentTimeMillis();
+        for(Field field : fieldList){
+            List<TimeAxis> timeAxes = field.getTimeAxes();
+            int k = 0;
+            for(TimeAxis timeAxis : timeAxes){
+                if(time >= timeAxis.getStartTime() && time <= timeAxis.getEndTime()){
+                    k = 1;
+                }
+            }
+            if(k == 1){
+                field.setState("1");
+            }else {
+                field.setState("0");
+            }
+        }
+        return fieldList;
     }
 
     @Override

@@ -6,8 +6,8 @@
         <selectKey keyProperty="id" resultType="String" order="BEFORE">
             select replace(uuid(),'-','') from dual
         </selectKey>
-        INSERT INTO teaching (id, teacher_id, course_id, semester, state)
-        VALUES (#{id}, #{teacherId}, #{courseId},#{semester}, #{state})
+        INSERT INTO teaching (id, teacher_id, course_id, semester, state, week, time_arrange)
+        VALUES (#{id}, #{teacherId}, #{courseId},#{semester}, #{state}, #{week}, #{timeArrange})
     </insert>
 
     <!--删除授课-->
@@ -22,7 +22,9 @@
         SET teacher_id = #{teacherId},
             course_id = #{courseId},
             semester = #{semester},
-            state = #{state}
+            state = #{state},
+            week = #{week},
+            time_arrange = #{timeArrange}
         WHERE id = #{id}
     </update>
 
@@ -38,10 +40,13 @@
         <id property="id" column="id"/>
         <result property="semester" column="semester"/>
         <result property="state" column="state"/>
+        <result property="week" column="week"/>
+        <result property="timeArrange" column="time_arrange"/>
         <result property="teacherId" column="teacher_id"/>
         <result property="courseId" column="course_id"/>
         <association property="teacher" column="teacher_id" javaType="Teacher" resultMap="teacherResult"/>
         <association property="course" column="course_id" javaType="Course" resultMap="courseResult"/>
+        <association property="field" column="field_id" javaType="Field" resultMap="fieldResult"/>
     </resultMap>
 
     <resultMap id="teacherResult" type="Teacher">
@@ -56,6 +61,11 @@
         <result property="name" column="cname"/>
         <result property="classHour" column="classhour"/>
         <result property="number" column="cnumber"/>
+    </resultMap>
+
+    <resultMap id="fieldResult" type="Field">
+        <id property="id" column="fid"/>
+        <result property="name" column="fname"/>
     </resultMap>
 
     <!--获取所有授课-->
@@ -92,6 +102,28 @@
             LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
             LEFT OUTER JOIN course ON teaching.course_id = course.id
         WHERE teaching.teacher_id = #{teacherId}
+        ORDER BY (course.name + 0) ASC
+    </select>
+
+    <!--根据星期获取所有在授课程-->
+    <select id="getTeachingsByWeek" resultMap="teachingResult">
+        SELECT
+            teaching.*,
+            teacher.id tid,
+            teacher.name tname,
+            teacher.sex,
+            teacher.number tnumber,
+            course.id cid,
+            course.name cname,
+            course.classhour,
+            course.number cnumber,
+            field.id fid,
+            field.name fname
+        FROM teaching
+            LEFT OUTER JOIN teacher ON teaching.teacher_id = teacher.id
+            LEFT OUTER JOIN course ON teaching.course_id = course.id
+            LEFT OUTER JOIN field ON teaching.field_id = field.id
+        WHERE teaching.week = #{week} AND teaching.state = 1
         ORDER BY (course.name + 0) ASC
     </select>
 

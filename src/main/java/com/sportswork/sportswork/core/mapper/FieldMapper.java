@@ -2,6 +2,7 @@ package com.sportswork.sportswork.core.mapper;
 
 import com.sportswork.sportswork.core.entity.Equipment;
 import com.sportswork.sportswork.core.entity.Field;
+import com.sportswork.sportswork.core.entity.TimeAxis;
 
 import java.util.List;
 
@@ -19,4 +20,5 @@ public interface FieldMapper {
     void setField(Field field);
     void setFieldState(String id, int state);
     long getCount();
+    void addTimeAxis(TimeAxis timeAixs);
 }
